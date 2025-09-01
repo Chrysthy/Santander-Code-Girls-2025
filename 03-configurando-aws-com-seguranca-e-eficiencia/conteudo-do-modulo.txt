@@ -1,0 +1,14 @@
+* Configuração da conta AWS
+
+É importante saber que na criação de toda conta CLOUD você terá uma conta principal (root) com super permissões ao seu workspace e é recomendado ter um conta secundária
+para trabalhar no dia a dia.
+
+Vamos precisar:
+- Email
+- Número de telefone
+- Cartão de Crédito (Para verificação)
+
+Site: https://aws.amazon.com/pt/free/
+
+
+
