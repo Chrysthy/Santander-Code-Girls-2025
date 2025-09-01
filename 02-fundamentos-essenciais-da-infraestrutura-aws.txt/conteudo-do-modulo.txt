@@ -26,3 +26,15 @@ Pode haver diferença no custo de armazenamento, transferência de dados ou inst
 - Isso impacta desempenho de apps web, streaming e APIs em tempo real.
 
 
+* Availability Zones
+
+- São data centers independentes fisicamente.
+- Cada reigão é independente das demais regiões, o que significa que os recursos são exclusivos da região escolhida em que está sendo provisionado os recursos.
+- Contribui para maior tolerância a falhas e não há replicação automática entre regiões, isto deve ser habilitado pelo administrador da conta.
+- Ao criar a conta na AWS, você ganha acesso a diversas regiões.
+
+! Os data centers estão conectados de forma lógica entre si e as regions de forma isolada.
+
+Veja no site da AWS o mapa onde tem as Availability Zones e as Regions
+
+
