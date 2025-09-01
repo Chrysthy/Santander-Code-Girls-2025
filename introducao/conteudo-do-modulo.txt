@@ -1,0 +1,18 @@
+* Infraestrutura Global
+
+A infraestrutura global da AWS é a mais segura, abrangente e confiável plataforma de nuvem e oferece mais de 200 serviços em todo o mundo. 
+
+- Regions: São áreas geográficas contendo várias Availability Zones.
+- Availability Zones: São data centers independentes fisicamente, mas conectados logicamente, para garantir alta disponibilidade.
+
+* Mapa da infraestrutura AWS
+
+A AWS abrange 105 zonas de disponibilidade em 33 regiões geográficas por todo o mundo.
+
+Temos no mínimo 2 data centers e no máximo 3.
+Ele faz uma réplica dos datas center.
+Então podemos ter um Region com no mínimo 2 Availability Zones - Se um vier a ter problema, o outro mantém em outra localidade, da mesma região
+
+! AWS só tem uma location aqui no Brasil, que é em SP. E ele provê para todo o Brasil.
+
+
