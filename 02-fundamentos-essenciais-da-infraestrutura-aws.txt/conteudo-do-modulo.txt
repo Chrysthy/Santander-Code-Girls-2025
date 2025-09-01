@@ -38,3 +38,9 @@ Pode haver diferença no custo de armazenamento, transferência de dados ou inst
 Veja no site da AWS o mapa onde tem as Availability Zones e as Regions
 
 
+* Serviços Gerenciados
+
+AWS (Amazon Web Services) é uma plataforma de nuvem muito conhecida pela sua alta escalabilidade e robusta instrutura, capaz de suportar sistemas de grande porte e alta demanda,
+como Amazon.com, Netflix, Tik Tok e sistemas bancários.  
+
+Incluído Arquivo com a Lista de Serviços AWS
