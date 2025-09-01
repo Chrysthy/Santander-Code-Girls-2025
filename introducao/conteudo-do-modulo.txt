@@ -16,3 +16,43 @@ Então podemos ter um Region com no mínimo 2 Availability Zones - Se um vier a 
 ! AWS só tem uma location aqui no Brasil, que é em SP. E ele provê para todo o Brasil.
 
 
+* Modelo de Negócio
+
+? CapEx (Capital Expenditure)
+- Você investe antes: compra hardware, monta servidores, instala data center ou infraestrutura própria.
+- Depois disso, você desenvolve ou roda o sistema em cima dessa infraestrutura.
+- Exemplos: compra de servidor, switches, racks, licenças permanentes de software.
+- Contábil: registrado como ativo e depreciado ao longo do tempo.
+
+? OpEx (Operational Expenditure)
+- Você paga conforme usa, sem precisar investir pesado antecipadamente.
+- Ideal para serviços na nuvem, como AWS, Azure, GCP.
+- Exemplos: instâncias EC2 on-demand, armazenamento S3, banco de dados RDS pago por hora/mês.
+- Contábil: gasto operacional direto, vai no resultado do mês.
+
+💡 Resumo mental simples:
+CapEx = “Compro e monto antes de usar.”
+OpEx = “Pago só pelo que uso, na hora que uso.”
+
+
+? IaaS (Infrastructure as a Service) – você constrói ou migra do zero - Responsabilidade do cliente (usuário)
+Exemplo do dia a dia:
+ - AWS EC2 → servidor virtual para rodar qualquer app.
+ - Google Compute Engine → cria máquinas virtuais e gerencia infraestrutura.
+ - Azure Virtual Machines → mesma ideia, mas no ecossistema Microsoft.
+⚡ Você decide tudo: sistema operacional, apps, banco de dados.
+
+? PaaS (Platform as a Service) – você implanta a solução - Responsabilidade meio a meio (a plataforma provê (atualização path, antivirus, atualiação) e o usuário é o código)
+Exemplo do dia a dia:
+ - Heroku → coloca seu app web para rodar sem se preocupar com servidores.
+ - AWS Elastic Beanstalk → sobe apps e a plataforma cuida do resto.
+ - Google App Engine → roda seu código sem gerenciar infraestrutura.
+⚡ Você foca só no desenvolvimento do software.
+
+? SaaS (Software as a Service) – você só usa o software - Responsabilidade do usuário em usar, pois já está pronto.
+Exemplo do dia a dia:
+ - Google Workspace (Docs, Gmail, Drive) → só abre e usa.
+ - Slack / Microsoft Teams → comunicação pronta.
+ - Spotify / Netflix → usa o software de entretenimento sem se preocupar com nada.
+⚡ Nada de infraestrutura ou plataforma, só serviço pronto para usar.
+
