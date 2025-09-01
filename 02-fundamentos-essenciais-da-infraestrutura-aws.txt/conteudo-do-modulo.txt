@@ -1,0 +1,28 @@
+* Regions - Regiões Geográficas
+
+- Region (região) é projetada para ser isolada das outras regiões.
+- Proporciona maior tolerância a flahas e estabilidade possível.
+- É composta por no mínimo 2 ou mais zonas de disponibilidade.
+- Não sabemos onde os data centers estão armazenaos os recursos, pois não é divulgado. Todas as clouds trabalham dessa forma. 
+- Nós temos informações que há uma region mas aonde fica não temos informações.
+
+
+* Pontos  para levar em consideração quando for escolher uma região
+
+? Compliance
+- Certifique-se de que a região atende às leis locais de dados (LGPD, GDPR, HIPAA, etc.).
+- Algumas regiões podem ter restrições sobre onde dados sensíveis podem ser armazenados.
+
+? Disponibilidade de Serviços
+- Nem todos os serviços da nuvem estão disponíveis em todas as regiões.
+- Verifique se a região suporta os serviços específicos que você pretende usar (ex.: EC2, RDS, Lambda, etc.).
+
+? Custo
+Preços podem variar de região para região. Pode ser mais barato ou mais caro.
+Pode haver diferença no custo de armazenamento, transferência de dados ou instâncias de computação.
+
+? Latência
+- Quanto mais próxima fisicamente do usuário final, menor a latência.
+- Isso impacta desempenho de apps web, streaming e APIs em tempo real.
+
+
