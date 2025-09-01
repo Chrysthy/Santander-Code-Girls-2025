@@ -12,3 +12,13 @@ Site: https://aws.amazon.com/pt/free/
 
 
 
+* Práticas de Segurança
+
+- Criar conta root e depois guardar
+- Não compartilhar dados da conta
+- Ficar a tento ao email com as cobranças
+- Autenticação multifator (MFA)
+- Estabelecer barreiras de proteção para permissões 
+
+! Práticas recomendadas de segurança no IAM:
+https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/best-practices.html
