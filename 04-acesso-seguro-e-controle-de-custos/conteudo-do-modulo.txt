@@ -1,0 +1,8 @@
+* Acesso Seguro e Controle de Custos
+
+- Assim que entrar na página principal, no lado direito em cima perto de AWS Foundation, escolha a região N. Virginia US East-1, pois ela é a mais barata. A região de SP é a mais cara.
+- Na engrenagem, podemos mudar o tema e a linguagem para português.
+- Interrogação, temos suporte, documentação, etc.
+- Sininho, notificações
+- E ao lado temos o cloud shell, é um terminal
+- Podemos criar os recursos na AWS via portal, via AWS SDK e cloud Shell (máquina virtual)
