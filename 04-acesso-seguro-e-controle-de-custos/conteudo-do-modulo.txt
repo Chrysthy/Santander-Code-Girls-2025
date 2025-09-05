@@ -36,16 +36,38 @@ Com o IAM, você pode:
 **Passo a passo bem simples** para aplicar políticas e permissões no IAM da AWS:
 
 1. **Acesse o IAM**
-    - No console da AWS, vá em **IAM**.
+- No console da AWS, vá em **IAM**.
+
 2. **Escolha o que vai configurar**
-    - Pode ser **Usuário**, **Grupo** ou **Role (Função)**.
+- Pode ser **Usuário**, **Grupo** ou **Role (Função)**.
+
 3. **Anexe uma política**
-    - Clique em **Add permissions (Adicionar permissões)**.
-    - Escolha entre:
+- Clique em **Add permissions (Adicionar permissões)**.
+- Escolha entre:
         - **Políticas gerenciadas pela AWS** (prontas, ex: *AmazonS3ReadOnlyAccess*).
         - **Políticas personalizadas** (JSON com regras específicas).
+
 4. **Revise e confirme**
-    - Veja se as permissões estão corretas.
-    - Salve.
+- Veja se as permissões estão corretas.
+- Salve.
+
+
+* Controle de Gastos e alertas
+
+- Análise de custos
+- Vamos procurar por gerenciamento de cobranças e custos
+- Vá em configuração necessária
+
+E vamos colocar um alerta: 
+
+- Modelo Novo - orçamento de gasto zero
+- Nome do orçamento, pode ser qualquer um
+- Colocar o email de destinatário
+- Configuração do modelo e clique em personalizar
+- Definir valor do orçamento
+    - Insira o valor orçado: ex. 10
+- Escopo do orçamento
+    - todos os serviços da AWS (recomendado)
+    - Criar os alertas
 
 
