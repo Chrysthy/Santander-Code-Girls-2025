@@ -71,3 +71,13 @@ E vamos colocar um alerta:
     - Criar os alertas
 
 
+* Formas de Acesso: AWS CLI, Cloud Shell e Console AWS
+
+Na AWS, você pode acessar e gerenciar seus recursos de várias formas:
+
+- Console AWS → Interface gráfica via navegador, ideal para iniciantes e visualização rápida.
+- AWS CLI (Command Line Interface) → Acesso via linha de comando, útil para automação e scripts. É a ferramenta que você pode instalar na sua máquina (Windows, Linux, Mac) 
+para rodar comandos da AWS.
+- AWS CloudShell → Terminal baseado em navegador dentro do próprio Console AWS, já vem com a CLI configurada.
+
+👉 Resumindo: Console é visual, CLI é automatizado, CloudShell é prático sem instalar nada.
