@@ -6,3 +6,26 @@
 - Sininho, notificações
 - E ao lado temos o cloud shell, é um terminal
 - Podemos criar os recursos na AWS via portal, via AWS SDK e cloud Shell (máquina virtual)
+
+
+* Entendendo e conhecendo o IAM
+
+Na AWS, **IAM (Identity and Access Management)** é o serviço que permite gerenciar **usuários, permissões e acesso** aos recursos da nuvem.
+
+Com o IAM, você pode:
+
+- Criar e gerenciar **usuários e grupos**.
+- Definir **permissões detalhadas** (quem pode acessar o quê).
+- Usar **políticas de segurança** para controlar recursos da AWS.
+- Habilitar **MFA (autenticação multifator)** para aumentar a segurança.
+- Integrar com **funções (roles)** que permitem que serviços ou aplicações assumam permissões temporárias.
+
+👉 Em resumo: o **IAM é a porta de entrada da segurança na AWS**, garantindo que cada pessoa ou serviço só tenha o acesso necessário.
+
+- Vamos habilitar a autenticação de dois fatores (MFA), vamos procurar por IAM na plataforma e de cara já vamos encontrar essa opção. Vamos fazer a autenticação pelo google authenticator.
+- No access management no lado esquerdo da tela, vamos selecionar o users e criar um usuário
+- Vai te levar para uma outra página e no enable IAM identity Center, escolha a primeira opção e continue. Vai levar outra página.
+- Você consegue ver as políticas as configurações dos MFA
+- Depois disso, vamos cadastrar as informações primárias
+- Precisa fazer parte de um grupo, então vamos precisar criar.
+- Revisamos as informações e depois podemos registrar o MFA
