@@ -1,4 +1,4 @@
-<h1 align="center"> Bootcamp Code Girls - AWS Cloud Foundations </h1>
+<h1 align="center"> Bootcamp Code Girls - AWS Cloud Foundations <img src=".github/code-girls.png" width="55px"></h1>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=c920c9&labelColor=000000">
