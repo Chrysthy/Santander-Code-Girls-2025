@@ -70,4 +70,9 @@ escalabilidade e pagamento sob demanda.
 - **Alta disponibilidade**: pode ser combinado com outros serviços AWS para tolerância a falhas.
 
 
+* Casos de uso comuns
 
+- Hospedagem de sites e aplicações web.
+- Servidores de bancos de dados.
+- Ambientes de desenvolvimento e teste.
+- Processamento de dados em grande escala.
