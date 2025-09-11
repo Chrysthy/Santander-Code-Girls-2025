@@ -55,3 +55,62 @@ aws s3 cp arquivo.jpg s3://meu-bucket-exemplo/pasta/arquivo.jpg
 # Criar volume EBS e anexar à EC2
 aws ec2 create-volume --size 100 --availability-zone us-east-1a --volume-type gp3
 aws ec2 attach-volume --volume-id vol-0123456789abcdef0 --instance-id i-0abc123def456 --device /dev/sdf
+
+
+* Classes de armazenamento do Amazon S3, organizadas pelo nível de frequência de acesso dos dados:
+
+Frequência de acesso, quando passe de 90 dias, passa a ser um acesso que não é tão frequente. Acima de 1 ano já entra no glacier.
+
+📦 Classes de Armazenamento do Amazon S3
+
+🔹 1. S3 Standard
+
+Uso geral, acesso frequente.
+Alta durabilidade (11 9’s) e disponibilidade.
+Latência baixa e throughput alto.
+Ideal para dados acessados diariamente (aplicações, sites, arquivos ativos).
+
+🔹 2. S3 Intelligent-Tiering
+
+Move automaticamente os objetos entre camadas de custo (frequente ↔ infrequente) com base no uso.
+Não tem impacto de performance.
+Bom quando não sabemos o padrão de acesso (às vezes acessa muito, às vezes quase nunca).
+Custa um pouco mais pelo monitoramento, mas reduz custos automaticamente.
+
+🔹 3. S3 Standard-IA (Infrequent Access)
+
+Baixo custo para dados acessados raramente, mas ainda disponíveis quando precisar.
+Cobra mais caro para recuperar (GET).
+Indicado para backups de curto prazo ou arquivos que quase não mudam.
+
+🔹 4. S3 One Zone-IA
+
+Parecido com o Standard-IA, mas os dados ficam somente em uma Availability Zone (não multi-AZ).
+Mais barato, mas com menos redundância.
+Bom para dados que podem ser recriados (ex.: cópias secundárias, cache, conteúdo não crítico).
+
+🔹 5. S3 Glacier Instant Retrieval
+
+Armazenamento de baixo custo com recuperação instantânea.
+Para dados raramente acessados, mas que precisam estar disponíveis sem esperar horas.
+Ex.: documentos médicos ou registros financeiros que precisam ser consultados rapidamente.
+
+🔹 6. S3 Glacier Flexible Retrieval (antigo S3 Glacier)
+
+Custos muito baixos.
+Recuperação pode levar minutos a horas, dependendo da opção (expedited, standard, bulk).
+Ótimo para arquivamento de longo prazo com acessos ocasionais.
+
+🔹 7. S3 Glacier Deep Archive
+
+Classe mais barata do S3.
+Recuperação lenta (12 a 48 horas).
+Projetada para arquivos que raramente serão acessados (compliance, histórico de logs, arquivos fiscais que devem ser guardados por anos).
+
+
+🎯 Resumindo:
+
+Frequente → S3 Standard
+Uso incerto → S3 Intelligent-Tiering
+Pouco acesso, mas disponível → S3 Standard-IA / One Zone-IA
+Arquivamento barato → Glacier Instant / Flexible / Deep Archive
