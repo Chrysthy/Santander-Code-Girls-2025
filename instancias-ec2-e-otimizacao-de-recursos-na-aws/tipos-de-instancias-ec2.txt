@@ -75,3 +75,11 @@ Cada tipos de estancias oferecem diferentes recursos de computação:
     - Usam **GPUs, FPGAs ou chips especializados**.
     - Indicadas para IA, Machine Learning, HPC (High Performance Computing).
 - **Exemplo de uso**: Treinamento de redes neurais, simulações científicas, renderização 3D.
+
+
+
+Calculadora de preços da AWS
+
+É uma ferramenta muito utilizada quando for criar um recurso para a AWS. É gratuito. Você consegue acessar e fazer a estimativa do custo.
+
+https://calculator.aws/#/
