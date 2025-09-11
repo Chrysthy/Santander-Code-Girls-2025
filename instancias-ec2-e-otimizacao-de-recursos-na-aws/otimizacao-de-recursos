@@ -1,5 +1,14 @@
 # ⚡ Otimização de Recursos no EC2
 
+Se você não estiver utilizando você está pagando pela instancia EC2
+Sim, está pagando.
+
+Se você fez o stop na instância você está pagando pela instancia EC2
+Sim, está pagando.
+
+Se você fez o stop na instância, dealocated/desalocou recusro, liberou recurso você está pagando pela instancia EC2?
+Não está pagando.
+
 ✨ **Resumo prático:**
 
 - 🚀 **Auto Scaling + Load Balancer** → Performance.
@@ -64,3 +73,203 @@
 
 ---
 
+
+# ⚖️ Escalabilidade no EC2
+
+### 🔹 **Escalabilidade Vertical (Vertical Scaling – Scale Up / Scale Down)**
+
+- **O que é:** Aumentar ou diminuir os recursos **da mesma instância**.
+- **Como funciona no EC2:**
+    - Trocar o tipo da instância por um maior (ex.: `t3.micro` → `t3.large`).
+    - Ganha mais CPU, memória ou I/O em uma única máquina.
+- **Vantagens:**
+    
+    ✅ Simples de configurar.
+    
+    ✅ Não exige alterações na aplicação.
+    
+- **Limitações:**
+    
+    ❌ Existe um limite físico (não dá para escalar indefinidamente).
+    
+    ❌ Se a instância falhar, a aplicação pode cair.
+    
+
+📌 **Exemplo:** Um banco de dados que precisa de mais memória → migrar de `r5.large` para `r5.2xlarge`.
+
+---
+
+### 🔹 **Escalabilidade Horizontal (Horizontal Scaling – Scale Out / Scale In)**
+
+- **O que é:** Adicionar ou remover **múltiplas instâncias menores** para dividir a carga.
+- **Como funciona no EC2:**
+    - Usar **Auto Scaling Groups** para iniciar ou encerrar instâncias conforme a demanda.
+    - Colocar um **Elastic Load Balancer (ELB)** para distribuir o tráfego entre instâncias.
+- **Vantagens:**
+    
+    ✅ Alta disponibilidade (se uma instância falhar, outras assumem).
+    
+    ✅ Escala praticamente ilimitada.
+    - **Limitações:**
+    
+    ❌ Pode exigir que a aplicação seja projetada para rodar em múltiplos servidores.
+    
+    ❌ Mais complexidade (rede, sincronização, banco de dados distribuído).
+    
+
+📌 **Exemplo:** Um e-commerce na Black Friday aumenta de 4 para 20 instâncias para aguentar o tráfego.
+
+---
+
+### ✨ Resumindo
+
+- **Vertical** → aumentar recursos de **uma máquina só**.
+- **Horizontal** → adicionar **mais máquinas** e distribuir carga.
+
+As **instâncias sob demanda (On-Demand Instances)** são o **modelo mais simples e flexível de uso do Amazon EC2**.
+
+---
+
+# ⚡ Instâncias Sob Demanda (On-Demand Instances)
+
+### 🔹 **O que são**
+
+- Você **paga por hora ou segundo de uso** (dependendo do tipo da instância).
+- **Sem contrato ou compromisso a longo prazo**.
+- Pode iniciar, parar e terminar quando quiser.
+
+### 🔹 **Características principais**
+
+- **Pagamento conforme uso:** você só paga pelo tempo em que a instância estiver rodando.
+- **Flexibilidade total:** pode trocar de tipo de instância, desligar ou reiniciar quando precisar.
+- **Ideal para testes e workloads variáveis:** sem necessidade de planejamento a longo prazo.
+- **Maior custo unitário:** comparado a modelos como **Reserved Instances** ou **Savings Plans**.
+
+---
+
+### 🔹 **Casos de uso**
+
+✅ Aplicações de **curta duração** ou de uso imprevisível.
+
+✅ **Ambientes de desenvolvimento e teste**, onde você inicia e para instâncias frequentemente.
+
+✅ Workloads que não justificam contrato de longo prazo.
+
+---
+
+### 🔹 **Comparação rápida com outros modelos**
+
+- **On-Demand** → Flexível, paga pelo uso. (💸 mais caro por hora)
+- **Reserved Instances / Savings Plans** → Mais barato, mas exige compromisso de 1 a 3 anos.
+- **Spot Instances** → Muito mais barato, mas podem ser interrompidas pela AWS.
+
+---
+
+👉 Resumindo: **Instâncias Sob Demanda = liberdade total + custo maior.**
+
+As **Instâncias Reservadas (Reserved Instances – RIs)** são um modelo de compra do **Amazon EC2** que te dá **grande desconto em relação às instâncias sob demanda**, em troca de um **compromisso de uso por 1 ou 3 anos**.
+
+
+
+# 💡 Instâncias Reservadas (RIs)
+
+### 🔹 **O que são**
+
+- Você “reserva” a capacidade de uma instância EC2 por **1 ou 3 anos**.
+- Em troca, recebe um **desconto de até 72%** comparado ao modelo sob demanda.
+- Mais indicado para workloads **constantes e previsíveis**.
+
+---
+
+### 🔹 **Características principais**
+
+- **Compromisso de longo prazo**: paga mensalmente ou antecipado (1 ou 3 anos).
+- **Economia significativa**: até 72% mais barato.
+- **Capacidade garantida** em algumas regiões.
+- Não é um tipo diferente de instância → é apenas **um modelo de cobrança**.
+
+---
+
+### 🔹 **Tipos de RIs**
+
+1. **Standard RIs**
+    - Maior desconto (até 72%).
+    - Menos flexíveis (fixa em região, família, tipo e OS).
+2. **Convertible RIs**
+    - Menos desconto (até 54%).
+    - Mais flexíveis → você pode mudar instância, família, SO durante o período.
+
+---
+
+### 🔹 **Casos de uso**
+
+✅ Aplicações críticas **24/7** (bancos de dados, servidores de produção).
+
+✅ Workloads previsíveis e de longo prazo.
+
+✅ Empresas que buscam **economia estável** em infraestrutura.
+
+
+### 🔹 **Comparação rápida com outros modelos**
+
+- **On-Demand** → Flexível, paga pelo uso. (💸 mais caro por hora).
+- **Reserved (RIs)** → Barato, mas exige **compromisso de longo prazo**.
+- **Spot** → Muito barato, mas pode ser interrompido.
+
+---
+
+✨ **Resumo:**
+
+- **RIs = economia + previsibilidade.**
+- Bom para **aplicações que não podem parar** e **rodam sempre**.
+
+
+
+# Instâncias Spot (Spot Instances)
+
+### 🔹 **O que são**
+
+- São instâncias EC2 **ociosas** na AWS, disponibilizadas com **até 90% de desconto** em relação ao preço sob demanda.
+- Você **“oferta” um valor** ou aceita o preço spot atual e pode usar enquanto a instância estiver disponível.
+- **A AWS pode encerrar a instância a qualquer momento** se precisar da capacidade de volta.
+
+---
+
+### 🔹 **Características principais**
+
+- **Muito mais baratas** → até 90% de economia.
+- **Não garantem disponibilidade contínua** → podem ser interrompidas com aviso prévio de 2 minutos.
+- **Flexibilidade de uso** → ideais para workloads que toleram interrupção.
+
+---
+
+### 🔹 **Casos de uso**
+
+✅ Processamento em lote.
+
+✅ Treinamento de **Machine Learning**.
+
+✅ Simulações científicas e big data.
+
+✅ Renderização de imagens/vídeos.
+
+✅ Aplicações tolerantes a falhas.
+
+❌ **Não indicado** para:
+
+- Bancos de dados de produção.
+- Aplicações críticas que não podem parar.
+
+---
+
+### 🔹 **Comparação rápida**
+
+- **On-Demand** → Flexível, paga pelo uso (mais caro).
+- **Reserved (RIs)** → Compromisso de 1 a 3 anos, mais barato.
+- **Spot** → Muito barato, mas pode ser **interrompido a qualquer momento**.
+
+---
+
+✨ **Resumo:**
+
+- **Spot = economia máxima 💰, mas sem garantia de continuidade.**
