@@ -1,0 +1,57 @@
+Armazenamento na Nuvem com Amazon EBS e S3
+
+1) Visão Geral
+- Amazon S3 (Simple Storage Service): armazenamento de objetos, acessível via HTTP, altamente durável, escalável e econômico. Ideal para arquivos, backups, sites estáticos, data lakes e arquivamento.
+- Amazon EBS (Elastic Block Store): armazenamento em blocos, anexado a instâncias EC2. Funciona como um disco virtual para sistemas operacionais, bancos de dados e aplicações com baixa latência.
+
+2) Amazon S3 - Características
+- Tipo: Object storage (dados + metadata + key).
+- Durabilidade: 99.999999999% (11 9’s).
+- Consistência: Strong consistency para PUT/GET/LIST.
+- Classes de armazenamento: Standard, Intelligent-Tiering, Standard-IA, OneZone-IA, Glacier (arquivamento).
+- Recursos: versionamento, lifecycle rules, bucket policies, presigned URLs, replicação entre regiões, eventos (S3 + Lambda).
+- Casos de uso: sites estáticos, distribuição de conteúdo, backups, arquivamento, data lake.
+
+3) Amazon EBS - Características
+- Tipo: Block storage (volumes vistos como discos pela EC2).
+- Escopo: limitado a uma Availability Zone (AZ).
+- Tipos de volume:
+  - gp3 (SSD uso geral, até 16.000 IOPS, custo otimizado).
+  - gp2 (legado, IOPS dependem do tamanho).
+  - io2/io1 (Provisioned IOPS, para bancos críticos).
+  - st1/sc1 (HDD otimizados para throughput).
+- Snapshots: backups incrementais, armazenados de forma durável (internamente no S3).
+- Recursos: criptografia KMS, redimensionamento dinâmico, multi-attach (io1/io2), replicação via snapshots.
+
+4) Comparação S3 vs EBS
+- Acesso: S3 via API (HTTP), EBS via bloco/dispositivo.
+- Latência: S3 maior, EBS baixa.
+- Escopo: S3 global/multi-AZ, EBS restrito à AZ.
+- Casos de uso: S3 para arquivos/arquivamento, EBS para bancos de dados e SO.
+- Custos: S3 cobra por GB + requisições + transferência; EBS cobra por GB + provisionamento de IOPS/throughput.
+
+5) Quando usar
+- EBS: bancos de dados, SOs, aplicações críticas que exigem baixa latência.
+- S3: backup, data lake, arquivamento, conteúdo estático.
+- Combinação comum: banco em EBS com backups de snapshots salvos em S3.
+
+6) Performance
+- EBS gp3 permite separar tamanho de disco de IOPS/throughput.
+- S3 escala automaticamente, mas boas práticas incluem distribuir chaves de objetos e usar CloudFront para latência global.
+
+7) Segurança
+- S3: criptografia SSE-S3, SSE-KMS, ACLs, policies, VPC endpoints.
+- EBS: criptografia KMS, controle de acesso via IAM.
+
+8) Custos
+- S3: otimizar com Intelligent-Tiering, lifecycle policies e Glacier para arquivamento.
+- EBS: dimensionar volumes corretamente, apagar snapshots antigos, escolher gp3 em vez de gp2 quando possível.
+
+9) Exemplos CLI
+# Criar bucket S3 e enviar arquivo
+aws s3 mb s3://meu-bucket-exemplo --region us-east-1
+aws s3 cp arquivo.jpg s3://meu-bucket-exemplo/pasta/arquivo.jpg
+
+# Criar volume EBS e anexar à EC2
+aws ec2 create-volume --size 100 --availability-zone us-east-1a --volume-type gp3
+aws ec2 attach-volume --volume-id vol-0123456789abcdef0 --instance-id i-0abc123def456 --device /dev/sdf
