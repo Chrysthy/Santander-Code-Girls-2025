@@ -1,0 +1,22 @@
+* Tipos de Estancias EC2?
+
+Cada tipos de estancias oferecem diferentes recursos de computação:
+
+| **Família**       | **Tipo**                     | **CPU** | **Memória** | **Armazenamento**                  | **Casos de uso**                                                                 |
+|-------------------|------------------------------|--------|-------------|------------------------------------|----------------------------------------------------------------------------------|
+| **t / m**         | Uso Geral                    | Médio  | Médio       | EBS (rede)                         | Aplicações web, servidores de app, dev/teste                                     |
+| **c**             | Otimizada para Computação    | Alto   | Baixo/Médio | EBS (rede)                         | Jogos online, ML, processamento em lote, análises                                |
+| **r / x / z**     | Otimizada para Memória       | Médio  | Alto        | EBS (rede)                         | Bancos de dados (SAP HANA, Redis), big data, análises em tempo real              |
+| **i / d / h**     | Otimizada para Armazenamento | Médio  | Médio       | Local SSD/NVMe de alta performance | Data warehouses, NoSQL, ElasticSearch, Hadoop                                    |
+| **p / g / f / trn** | Aceleradas (GPU/IA/HPC)     | Alto   | Alto        | EBS (rede)                         | Treinamento de IA, deep learning, renderização 3D, HPC                           |
+
+
+📊 **Resumo visual da escolha**:
+
+- 🌐 **t/m** → Uso geral
+- ⚡ **c** → CPU intenso
+- 🧠 **r/x/z** → Memória pesada
+- 💾 **i/d/h** → Armazenamento rápido
+- 🎮 **p/g/f/trn** → GPU/IA/HPC
+
+
