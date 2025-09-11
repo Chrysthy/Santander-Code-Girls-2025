@@ -1,0 +1,19 @@
+* O que são as instancias EC2?
+
+EC2 - Elastic compute Cloud, são , máquinas virtuais na AWS, podem ser com sistema operacional Windows ou Linux.
+
+Uma EC2 é composta por:
+
+- CPU
+- Memória
+- Disco
+- Rede
+- Sistema Operacional
+
+No modelo Cloud, uma EC2 é do tipo IAAS, ou seja quando criamos uma EC2 estamos utilizando um tipo de infraestrutura como serviço.
+
+? E qual seria nossa responsabilidade sobe esse recurso ?
+Seria de aplicativos, dados e conexoes que fazemos.
+
+? Como escolher a EC2 correta para minhas aplicaçoes ?
+escolher a instancia correta na AWS é crucial para garantir eficiencia, escalabilidade e economia nos gastos com nuvem.
