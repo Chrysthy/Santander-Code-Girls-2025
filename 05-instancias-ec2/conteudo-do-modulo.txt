@@ -48,7 +48,7 @@ escalabilidade e pagamento sob demanda.
     - **Compute Optimized**: alto desempenho de CPU.
     - **Memory Optimized**: muita memória RAM.
     - **Storage Optimized**: alto desempenho de armazenamento.
-    
+
 4. **Elastic Block Store (EBS)**
     
     É o armazenamento persistente para sua instância, semelhante a um HD virtual. Ele continua existindo mesmo que a instância seja desligada.
@@ -60,3 +60,14 @@ escalabilidade e pagamento sob demanda.
 6. **Elastic IP**
     
     Um endereço IP público fixo que pode ser associado à sua instância para acesso externo.
+
+
+* Vantagens do EC2
+
+- **Escalabilidade**: aumenta ou diminui recursos rapidamente.
+- **Pagamento sob demanda**: paga-se pelo tempo que usa a instância.
+- **Flexibilidade**: escolha de SO, tipo de instância, região, rede.
+- **Alta disponibilidade**: pode ser combinado com outros serviços AWS para tolerância a falhas.
+
+
+
