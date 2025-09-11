@@ -1,0 +1,66 @@
+# ⚡ Otimização de Recursos no EC2
+
+✨ **Resumo prático:**
+
+- 🚀 **Auto Scaling + Load Balancer** → Performance.
+- 💰 **Savings Plans / Reserved / Spot** → Economia.
+- 🔍 **CloudWatch + Compute Optimizer** → Ajuste fino.
+
+
+### 🔹 **1. Escolha adequada da instância**
+
+- Analise a carga de trabalho (CPU, memória, disco, rede).
+- Use **famílias corretas** (ex.: `c` para CPU, `r` para memória, `i` para I/O).
+- Comece com instâncias menores e escale conforme necessário.
+
+---
+
+### 🔹 **2. Elasticidade e Auto Scaling**
+
+- Configure **Auto Scaling Groups** para aumentar/diminuir instâncias automaticamente.
+- Evita pagar por recursos ociosos.
+- Garante alta disponibilidade.
+
+---
+
+### 🔹 **3. Modelos de compra**
+
+- **On-Demand** → Flexível, paga pelo uso (bom para testes ou workloads variáveis).
+- **Reserved Instances (RIs)** → Até 75% mais barato, indicado para workloads constantes.
+- **Savings Plans** → Similar a RIs, mas mais flexível (compromisso de 1 ou 3 anos).
+- **Spot Instances** → Até 90% de desconto, mas podem ser interrompidas (ótimas para processamento em lote, ML, big data).
+
+---
+
+### 🔹 **4. Otimização de armazenamento**
+
+- Use **EBS otimizado** para throughput alto.
+- Escolha entre SSD (alta performance) ou HDD (baixo custo).
+- Faça **Snapshots** para backups e limpeza de volumes não usados.
+
+---
+
+### 🔹 **5. Otimização de rede**
+
+- Habilite **Enhanced Networking (ENA / EFA)** para cargas pesadas de rede.
+- Use **Elastic Load Balancer (ELB)** para distribuir tráfego.
+- Aproveite **Amazon CloudFront** para CDN e reduzir latência.
+
+---
+
+### 🔹 **6. Monitoramento e ajustes**
+
+- Use **CloudWatch** para monitorar métricas de CPU, memória, disco e rede.
+- Configure **alarmas** para detectar picos ou ociosidade.
+- Ajuste instâncias ou desligue as não utilizadas.
+
+---
+
+### 🔹 **7. Boas práticas adicionais**
+
+- Use **instâncias Spot para jobs não críticos** e **Reserved para workloads previsíveis**.
+- **Right-sizing**: analise relatórios do **AWS Compute Optimizer** para ajustar instâncias superdimensionadas.
+- Automatize desligamento de instâncias em horários ociosos (dev/teste).
+
+---
+
