@@ -17,3 +17,11 @@ Seria de aplicativos, dados e conexoes que fazemos.
 
 ? Como escolher a EC2 correta para minhas aplicaçoes ?
 escolher a instancia correta na AWS é crucial para garantir eficiencia, escalabilidade e economia nos gastos com nuvem.
+
+
+* O que é o Amazon EC2
+
+O Amazon Elastic Compute Cloud (EC2) é um serviço da AWS que permite criar e gerenciar servidores virtuais na nuvem, chamados de **instâncias**. 
+Esses servidores podem rodar aplicações, sites, bancos de dados e praticamente qualquer serviço que você rodaria em um servidor físico, mas com flexibilidade, 
+escalabilidade e pagamento sob demanda.
+
