@@ -25,3 +25,38 @@ O Amazon Elastic Compute Cloud (EC2) é um serviço da AWS que permite criar e g
 Esses servidores podem rodar aplicações, sites, bancos de dados e praticamente qualquer serviço que você rodaria em um servidor físico, mas com flexibilidade, 
 escalabilidade e pagamento sob demanda.
 
+
+* Principais conceitos
+
+1. **Instância EC2**
+    
+    É o servidor virtual. Você escolhe:
+    
+    - **Tipo de instância** (CPU, memória, armazenamento)
+    - **Sistema operacional** (Linux, Windows, etc.)
+    - **Região** (onde o servidor estará fisicamente)
+
+2. **AMIs (Amazon Machine Images)**
+    
+    São imagens pré-configuradas para criar instâncias. Contêm sistema operacional e softwares adicionais.
+    
+3. **Tipos de instância**
+    
+    Existem categorias para diferentes necessidades:
+    
+    - **General Purpose**: equilíbrio entre CPU, memória e rede.
+    - **Compute Optimized**: alto desempenho de CPU.
+    - **Memory Optimized**: muita memória RAM.
+    - **Storage Optimized**: alto desempenho de armazenamento.
+    
+4. **Elastic Block Store (EBS)**
+    
+    É o armazenamento persistente para sua instância, semelhante a um HD virtual. Ele continua existindo mesmo que a instância seja desligada.
+    
+5. **Segurança (Security Groups)**
+    
+    Funciona como um firewall virtual. Você define quais portas e protocolos podem acessar a instância.
+    
+6. **Elastic IP**
+    
+    Um endereço IP público fixo que pode ser associado à sua instância para acesso externo.
