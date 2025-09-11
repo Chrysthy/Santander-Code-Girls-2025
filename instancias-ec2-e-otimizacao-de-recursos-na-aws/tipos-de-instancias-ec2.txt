@@ -20,3 +20,58 @@ Cada tipos de estancias oferecem diferentes recursos de computação:
 - 🎮 **p/g/f/trn** → GPU/IA/HPC
 
 
+
+## 📌 Famílias de Instâncias EC2
+
+### 🔹 **Uso Geral (General Purpose)**
+
+- **Famílias**: `t`, `m`
+- **Exemplos**: `t3`, `t4g`, `m5`, `m6g`
+- **Características**:
+    - Balanceio entre **CPU, memória e rede**.
+    - Indicadas para aplicações web, servidores pequenos e bancos de dados de baixo/médio porte.
+- **Exemplo de uso**: Sites, ambientes de desenvolvimento, aplicações de negócio.
+
+---
+
+### 🔹 **Otimizada para Computação (Compute Optimized)**
+
+- **Família**: `c`
+- **Exemplos**: `c5`, `c6g`, `c7i`
+- **Características**:
+    - Alta proporção de **CPU** em relação à memória.
+    - Indicada para cargas de trabalho que exigem processamento intenso.
+- **Exemplo de uso**: Machine Learning, processamento em lote, servidores de jogos, análises científicas.
+
+---
+
+### 🔹 **Otimizada para Memória (Memory Optimized)**
+
+- **Famílias**: `r`, `x`, `z`
+- **Exemplos**: `r5`, `r6g`, `x1e`, `z1d`
+- **Características**:
+    - Grande quantidade de **memória RAM**.
+    - Indicada para bancos de dados de alto desempenho e análise em tempo real.
+- **Exemplo de uso**: SAP HANA, Redis, Cassandra, análises de Big Data.
+
+---
+
+### 🔹 **Otimizada para Armazenamento (Storage Optimized)**
+
+- **Famílias**: `i`, `d`, `h`
+- **Exemplos**: `i3`, `i4i`, `d2`
+- **Características**:
+    - Alto desempenho de **armazenamento local (discos SSD/NVMe)**.
+    - Indicada para aplicações que exigem alta taxa de I/O.
+- **Exemplo de uso**: Data warehouses, ElasticSearch, Hadoop, bancos de dados NoSQL.
+
+---
+
+### 🔹 **Instâncias Aceleradas (Accelerated Computing)**
+
+- **Famílias**: `p`, `g`, `f`, `trn`
+- **Exemplos**: `p4d`, `g5`, `f1`, `trn1`
+- **Características**:
+    - Usam **GPUs, FPGAs ou chips especializados**.
+    - Indicadas para IA, Machine Learning, HPC (High Performance Computing).
+- **Exemplo de uso**: Treinamento de redes neurais, simulações científicas, renderização 3D.
