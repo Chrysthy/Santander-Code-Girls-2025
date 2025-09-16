@@ -1,0 +1,37 @@
+O S3 é como um serviço de armazenamento virtual na nuvem, onde você pode guardar arquivos de qualquer tipo. A unidade básica do S3 é o **Bucket**. Pense em um bucket como uma pasta grande que você cria para guardar seus arquivos.
+
+Aqui está um guia passo a passo, bem direto, para criar o seu primeiro bucket no Amazon S3.
+
+---
+
+### Passo a Passo: Criando seu Primeiro Bucket S3
+
+### 1. Acesso ao Console da AWS
+
+- Faça login no **Console de Gerenciamento da AWS**.
+
+### 2. Navegar para o Serviço S3
+
+- No campo de pesquisa, digite `S3` e selecione o serviço correspondente. Isso te levará ao painel do S3.
+
+### 3. Iniciar a Criação do Bucket
+
+- No painel, clique em **"Create bucket"** (Criar bucket).
+
+### 4. Configurar os Detalhes do Bucket
+
+- **Bucket name:** Dê um nome **único** para o seu bucket. Os nomes de buckets precisam ser únicos **globalmente** em toda a AWS. Use letras minúsculas, números e hífens. Uma boa prática é usar algo como `nome-do-seu-projeto-2025-seu-nome-exclusivo`.
+- **AWS Region:** Escolha a região da AWS mais próxima de você ou dos seus usuários. Por exemplo, se você estiver no Brasil, escolha `sa-east-1` (São Paulo).
+- **Block Public Access settings for this bucket:** **Deixe as caixas marcadas como estão.** Isso garante que seu bucket não seja acessível publicamente por padrão, mantendo seus arquivos seguros.
+- **Bucket Versioning:** Deixe desativado por enquanto. Ele é útil se você precisar de um histórico de versões dos seus arquivos, mas pode adicionar complexidade e custos extras.
+
+### 5. Criar o Bucket
+
+- Role a página para baixo e clique em **"Create bucket"**.
+- Pronto! Seu bucket será criado em segundos.
+
+---
+
+### Próximos Passos
+
+Agora que seu bucket está criado, você pode clicar nele e começar a fazer o **upload de arquivos**. Basta clicar em **"Upload"**, arrastar e soltar seus arquivos e confirmar a ação.
