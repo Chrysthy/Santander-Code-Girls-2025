@@ -1,0 +1,29 @@
+Redes na AWS são a espinha dorsal da infraestrutura em nuvem, permitindo que você conecte, isole e proteja seus recursos de forma escalável e eficiente. Aqui vai um panorama completo para você entender como elas funcionam e como começar:
+
+🌐 Conceitos Fundamentais
+
+* VPC (Virtual Private Cloud): Sua rede privada dentro da AWS. Você define blocos de IP, sub-redes, rotas, firewalls e regras de acesso.
+
+* Sub-redes públicas e privadas: Controlam o acesso à internet e entre recursos internos.
+
+* Internet Gateway: Permite que instâncias em sub-redes públicas se comuniquem com a internet.
+
+* Elastic IP: IP público fixo para instâncias EC2.
+
+* Security Groups e Network ACLs: Camadas de segurança que controlam o tráfego de entrada e saída.
+
+* VPC Peering: Conecta duas VPCs para comunicação direta.
+
+* VPC Endpoints: Acesso privado a serviços da AWS sem passar pela internet2.
+
+🚀 Serviços de Rede Avançados
+
+* AWS Transit Gateway: Conecta múltiplas VPCs e redes locais por um único gateway.
+
+* AWS PrivateLink: Conectividade privada entre VPCs e serviços da AWS.
+
+* Elastic Load Balancing: Distribui tráfego entre instâncias para alta disponibilidade.
+
+* Amazon Route 53: DNS gerenciado para direcionar usuários às aplicações com baixa latência.
+
+* Amazon CloudFront: CDN para entrega rápida de conteúdo globalmente.
