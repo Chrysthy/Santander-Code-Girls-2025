@@ -1,0 +1,37 @@
+Apesar de ambos os sistemas operacionais, Linux e Windows, serem usados em instâncias EC2, a experiência e os casos de uso são bem diferentes. Veja a comparação direta e simples.
+
+---
+
+### EC2 no Linux
+
+- **Custos:** Geralmente **mais baratos**. A maioria das distribuições Linux é de código aberto e gratuita, então você paga apenas pelo uso do hardware da AWS.
+- **Acesso:** O acesso principal é via **SSH** (Secure Shell), que é uma interface de linha de comando. Isso é ideal para desenvolvedores, sysadmins e tarefas de automação.
+- **Desempenho e Recursos:** Conhecido por ser leve, eficiente e usar menos recursos. É a escolha padrão para servidores web, bancos de dados e a maioria das aplicações em nuvem.
+- **Segurança:** Considerado por muitos como mais seguro por padrão, com modelos de permissão robustos e menos alvos de malware em comparação com o Windows.
+- **Casos de Uso:**
+    - Servidores web (ex: Apache, Nginx)
+    - Back-ends de aplicações (ex: Node.js, Python, Java)
+    - Containers (Docker) e orquestradores (Kubernetes)
+    - Bancos de dados (MySQL, PostgreSQL)
+
+---
+
+### EC2 no Windows
+
+- **Custos:** Geralmente **mais caros** devido à licença do sistema operacional da Microsoft, que é embutida no preço da instância.
+- **Acesso:** O acesso principal é via **RDP** (Remote Desktop Protocol), que fornece uma interface gráfica completa (uma "área de trabalho remota") para você interagir com o servidor.
+- **Desempenho e Recursos:** Requer mais recursos de hardware para rodar a interface gráfica e o sistema operacional, o que pode impactar o desempenho em comparação com o Linux para a mesma carga de trabalho.
+- **Segurança:** Possui ferramentas de segurança robustas, mas a superfície de ataque é maior devido à natureza da interface gráfica. Exige mais atenção à atualização e configuração.
+- **Casos de Uso:**
+    - Aplicações que dependem do ecossistema Microsoft (ASP.NET, .NET Core)
+    - Servidores de banco de dados SQL Server
+    - Servidores de domínio (Active Directory)
+    - Softwares legados que só rodam em Windows
+    - Ambientes que exigem uma interface gráfica para administração
+
+---
+
+### Resumo da Decisão
+
+- Escolha **Linux** para a maioria dos projetos de desenvolvimento web, aplicações de servidor, e quando a eficiência e o custo são prioridade. É a escolha padrão para a maioria das cargas de trabalho na nuvem.
+- Escolha **Windows** apenas se sua aplicação ou software **precisar** especificamente do sistema operacional Windows ou do ecossistema da Microsoft.
