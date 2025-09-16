@@ -1,0 +1,37 @@
+Amazon Route 53 é o serviço de DNS gerenciado da AWS, projetado para oferecer alta disponibilidade, escalabilidade e confiabilidade 
+na resolução de nomes de domínio e roteamento de tráfego para aplicações web.
+
+🌐 Principais Funcionalidades
+
+    Registro de domínios: Você pode registrar e gerenciar domínios diretamente pela AWS, com renovação automática.
+
+    Resolução de DNS: Converte nomes legíveis (como meusite.com) em endereços IP, com suporte para diversos tipos de registros (A, AAAA, CNAME, MX, TXT etc.).
+
+    Roteamento de tráfego inteligente: Direciona usuários para recursos com base em:
+
+    Latência (região mais rápida)
+
+    Geolocalização (conteúdo regionalizado)
+
+    Failover (redireciona em caso de falha)
+
+    Pesos (testes A/B ou distribuição controlada)
+
+    Multi-value answer (retorna múltiplos IPs aleatoriamente).
+
+    Verificação de integridade: Monitora endpoints (como servidores web) e redireciona o tráfego automaticamente se detectar falhas.
+
+    Zonas públicas e privadas: Permite gerenciar DNS tanto para internet quanto para redes internas (VPCs).
+
+
+💡 Quando usar?
+
+Ideal para:
+
+    Sites e APIs com alta demanda
+
+    Ambientes multirregionais
+
+    Estratégias de failover e disaster recovery
+
+    Aplicações que exigem baixa latência e escalabilidade
