@@ -1,0 +1,34 @@
+Pense na sua Amazon VPC (Virtual Private Cloud) como o seu andar exclusivo em um prédio.
+
+A Amazon Subnet é uma divisão desse andar em salas menores.
+
+Essas "salas" são pedaços da sua rede virtual. Ao criar uma subnet, você está definindo uma faixa de endereços IP dentro da sua VPC.
+
+A principal razão para dividir sua VPC em subnets é a organização e o controle de acesso.
+
+* Tipos de Subnets
+
+Você pode ter dois tipos de subnets, cada uma com uma função específica:
+
+Subnet Pública: Uma subnet pública é uma "sala" que tem uma porta de acesso para a internet, por meio de um Internet Gateway. Qualquer recurso que você coloque aqui (como um servidor web) pode se comunicar diretamente com a internet. Por isso, essa subnet é ideal para hospedar serviços que precisam ser acessíveis publicamente.
+
+Subnet Privada: Uma subnet privada é uma "sala" sem porta para a internet. Os recursos aqui só podem se comunicar com outros recursos na mesma VPC. Para acessar a internet (para baixar atualizações, por exemplo), eles precisam de um "intermediário" como um NAT Gateway (Network Address Translation). Essa subnet é perfeita para bancos de dados ou servidores de aplicação que precisam estar protegidos e não devem ser acessíveis diretamente de fora.
+
+Em resumo, a subnet é a maneira de segmentar e organizar sua rede dentro da VPC, permitindo que você controle a conectividade e a segurança de cada parte da sua infraestrutura.
+
+
+🧠 Principais Características
+
+* Rede isolada: Funciona como uma rede privada, semelhante à que você teria em um data center físico.
+
+* Controle de IPs: Você define os intervalos de endereços IPv4 e IPv6.
+
+* Sub-redes públicas e privadas: Permite segmentar sua rede para diferentes propósitos (ex: servidores web vs. bancos de dados).
+
+* Gateways e VPNs: Conecte sua VPC à internet ou a redes corporativas locais com segurança.
+
+* Segurança granular: Use Security Groups e Network ACLs para controlar o tráfego de entrada e saída.
+
+* VPC Peering: Conecte múltiplas VPCs para comunicação segura entre elas.
+
+* Flow Logs: Monitore o tráfego de rede para análise e auditoria.
