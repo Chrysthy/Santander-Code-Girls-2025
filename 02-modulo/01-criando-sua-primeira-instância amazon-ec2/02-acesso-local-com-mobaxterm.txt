@@ -1,0 +1,33 @@
+### Passo a Passo: Acessando sua Instância com MobaXterm
+
+1. **Baixar e Instalar o MobaXterm**:
+    - Se você ainda não tem, vá ao site oficial do MobaXterm e baixe a versão gratuita (Home Edition).
+    - Instale-o no seu computador.
+2. **Preparar a Chave de Acesso (.pem)**:
+    - O MobaXterm prefere chaves no formato `.ppk` (PuTTY Private Key). Você pode converter sua chave `.pem` para `.ppk` usando o **PuTTYgen** (uma ferramenta que vem com o PuTTY ou MobaXterm). No entanto, o MobaXterm também consegue lidar com o `.pem` diretamente, o que facilita.
+    - **O ponto mais importante**: a chave `.pem` deve ter as permissões corretas para funcionar. No Windows, basta garantir que ela não esteja em uma pasta com restrições.
+3. **Criar uma Nova Sessão SSH no MobaXterm**:
+    - Abra o MobaXterm.
+    - No canto superior esquerdo, clique em **"Session"**.
+    - Selecione o tipo de sessão **"SSH"**.
+4. **Configurar os Detalhes da Sessão**:
+    - **Host**: No campo `Remote host`, coloque o **endereço IPv4 público** da sua instância EC2. Você encontra esse endereço no console da AWS, na seção "Instances".
+    - **Username**: No campo `Username`, use o nome de usuário padrão da sua AMI.
+        - Para **Amazon Linux 2**, o nome é `ec2-user`.
+        - Para **Ubuntu**, o nome é `ubuntu`.
+    - **Chave Privada**: Marque a caixa **"Use private key"**.
+    - Clique no ícone de pasta ao lado do campo e navegue até onde você salvou seu arquivo `.pem`. Selecione-o.
+5. **Conectar**:
+    - Clique em **"OK"**.
+    - O MobaXterm tentará se conectar à sua instância. Se tudo estiver correto, você verá a tela do terminal e poderá começar a usar sua instância.
+
+---
+
+### Como Excluir uma Sessão no MobaXterm
+
+1. **Acessar a Lista de Sessões**:
+    - No painel esquerdo do MobaXterm, procure a aba **"Sessions"**.
+2. **Excluir a Sessão**:
+    - Clique com o botão direito na sessão que você criou.
+    - Selecione **"Delete session"**.
+    - Confirme a exclusão quando a mensagem de aviso aparecer. A sessão será removida da sua lista, mas a instância na AWS continua existindo.
