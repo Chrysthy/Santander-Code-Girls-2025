@@ -1,0 +1,69 @@
+### 1. Acesso ao Console da AWS
+
+- Faça login no **Console de Gerenciamento da AWS**. Se você ainda não tem uma conta, precisará criar uma.
+
+### 2. Navegar para o Serviço EC2
+
+- Na barra de pesquisa, digite `EC2` e clique no serviço que aparecer. Isso te levará ao painel do EC2.
+
+### 3. Iniciar a Criação da Instância
+
+- No painel do EC2, procure e clique no botão **"Launch instance"** (Lançar instância).
+
+### 4. Escolher a Imagem (AMI)
+
+- **Nome:** Dê um nome para sua instância. Algo como `minha-primeira-instancia`.
+- **Application and OS Images (Amazon Machine Image - AMI):** Escolha o sistema operacional. Para iniciantes, a `Amazon Linux` ou a `Ubuntu` são ótimas opções. Certifique-se de que a AMI que você escolheu está qualificada para a **"Free tier"** (camada gratuita), se você quiser evitar custos.
+
+### 5. Escolher o Tipo de Instância
+
+- **Instance type:** O `t2.micro` ou `t3.micro` são os mais comuns para começar e estão inclusos na **Free tier**. Escolha um desses.
+
+### 6. Configurar o Par de Chaves (Key Pair)
+
+- **Key pair (login):** Essa é a chave de segurança para você se conectar à instância.
+    - Clique em **"Create new key pair"**.
+    - Dê um nome para a chave (ex: `chave-ec2`).
+    - Deixe o tipo de chave como **RSA** e o formato de arquivo como **.pem**.
+    - Clique em **"Create key pair"**. O arquivo `.pem` será baixado automaticamente. **Guarde este arquivo em um local seguro, pois você só poderá baixá-lo uma vez.**
+
+### 7. Configurar as Configurações de Rede (Network Settings)
+
+- **Firewall (security groups):** Esta é a configuração que controla o tráfego de entrada e saída para sua instância.
+    - Deixe a opção **"Create security group"** selecionada.
+    - Marque as caixas para permitir tráfego **SSH** (para você se conectar) e **HTTP** (se você planeja hospedar um site básico). Se você habilitar HTTP, o tráfego da porta 80 será liberado.
+
+### 8. Lançar a Instância
+
+- Revise o resumo das configurações na lateral direita.
+- Clique em **"Launch instance"**.
+- Aguarde alguns minutos. Sua instância estará sendo criada. Você pode clicar em **"View all instances"** (Ver todas as instâncias) para acompanhar o status.
+
+Pronto! Sua primeira instância EC2 estará em execução em alguns minutos. Para se conectar a ela, você precisará usar o arquivo `.pem` que você baixou.
+
+---
+
+### O que fazer agora?
+
+- Acesse o painel EC2, clique na sua instância e procure pelo **"Public IPv4 address"**. Você usará esse endereço para se conectar.
+- Para se conectar via **SSH**, abra um terminal ou prompt de comando e use o seguinte comando, substituindo o caminho para sua chave e o endereço IP:
+`ssh -i /caminho/para/sua-chave.pem ec2-user@seu-endereco-ipv4-publico`
+    
+    
+
+### Passo a Passo: Parando sua Instância EC2
+
+Depois que você termina de usar sua instância, mas planeja usá-la novamente mais tarde, você pode **pará-la** em vez de encerrá-la. Quando uma instância está parada, você não é cobrado pelo tempo de execução, apenas pelo armazenamento do disco (EBS), que é um custo mínimo.
+
+1. **Acesse o Console EC2**: No painel do EC2, clique em **"Instances"** (Instâncias) no menu lateral.
+2. **Selecione a Instância**: Na lista de instâncias, marque a caixa ao lado da instância que você quer parar.
+3. **Ação de Parada**:
+    - Clique no botão **"Instance state"** (Estado da instância) na parte superior.
+    - No menu suspenso, selecione **"Stop instance"** (Parar instância).
+    - Confirme a ação quando solicitado.
+
+Sua instância agora está em estado de "parada" (stopped). Quando precisar usá-la novamente, basta seguir os mesmos passos e, em vez de "Stop", selecionar **"Start instance"** (Iniciar instância).
+
+---
+
+**Observação importante:** Se você tem certeza de que nunca mais usará a instância, você deve **"Terminate instance"** (Encerrar instância). Isso a exclui permanentemente e libera todos os recursos. Lembre-se, essa ação não pode ser desfeita.
