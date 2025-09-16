@@ -1,0 +1,29 @@
+Se a VPC é o seu andar e a Subnet é a sua sala, o Security Group (SG) é a segurança na porta de cada servidor ou recurso dentro dessa 
+sala.
+
+Pense nele como um firewall virtual que controla o tráfego que entra (entrada) e que sai (saída) de uma ou mais instâncias EC2 
+(seus servidores virtuais).
+
+
+🔐 Características principais
+
+Controle por instância: Você associa Security Groups diretamente aos recursos, como EC2.
+
+Regras de entrada e saída: Define quais portas, protocolos e IPs podem se comunicar.
+
+Stateful: Se uma conexão de entrada é permitida, a resposta de saída é automaticamente liberada.
+
+Sem negação explícita: Só se define o que é permitido; o resto é bloqueado por padrão.
+
+Atualização dinâmica: Alterações nas regras são aplicadas imediatamente, sem reiniciar os recursos.
+
+
+🛠️ Exemplo prático
+
+Imagine um servidor web em EC2:
+
+Entrada: Permitir tráfego HTTP (porta 80) e HTTPS (porta 443) de qualquer IP.
+
+Saída: Permitir todo o tráfego para atualizações e comunicação com APIs externas.
+
+Você também pode criar Security Groups específicos para bancos de dados, permitindo acesso apenas de instâncias dentro da subnet privada.
