@@ -1,0 +1,34 @@
+Amazon Elastic Load Balancer (ELB)
+
+* O que é:
+
+Serviço da AWS que distribui automaticamente o tráfego de entrada entre múltiplas instâncias de EC2, containers ou outros recursos.
+
+Ajuda a garantir alta disponibilidade e escalabilidade de aplicações.
+
+Pode funcionar tanto para tráfego web (HTTP/HTTPS) quanto para aplicações internas (TCP/UDP).
+
+
+* Por que usar:
+
+Evita que um único servidor fique sobrecarregado.
+
+Garante que a aplicação continue funcionando mesmo se algum servidor falhar.
+
+Pode integrar com autoscaling para aumentar ou diminuir recursos conforme a demanda.
+
+
+* Tipos de Load Balancer na AWS:
+
+Application Load Balancer (ALB): para camada 7 (HTTP/HTTPS), ótimo para aplicações web modernas.
+
+Network Load Balancer (NLB): para camada 4 (TCP/UDP), ideal para tráfego de alta performance e baixa latência.
+
+Gateway Load Balancer (GLB): para integração com appliances de rede (como firewalls), direcionando o tráfego para eles de forma simples.
+
+
+Resumo rápido:
+
+    ELB = distribui tráfego, aumenta disponibilidade, protege contra sobrecarga. 
+    ALB, NLB e GLB = tipos para diferentes necessidades.
+
