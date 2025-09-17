@@ -1,0 +1,51 @@
+### **Tipos de Load Balancer na AWS**
+
+1. **Application Load Balancer (ALB)**
+- **Camada:** 7 (HTTP/HTTPS) – camada de aplicação.
+- **Uso:** sites e aplicações web modernas.
+- **Diferencial:**
+    - Entende **URLs, cabeçalhos e cookies** para rotear o tráfego.
+    - Suporta **regras avançadas de roteamento**, como enviar usuários para diferentes serviços dependendo da URL.
+- **Exemplo:** um e-commerce que envia pedidos para diferentes servidores de acordo com a seção do site (produtos, pagamento, suporte).
+
+1. **Network Load Balancer (NLB)**
+- **Camada:** 4 (TCP/UDP) – camada de transporte.
+- **Uso:** aplicações que precisam de **alta performance e baixa latência**.
+- **Diferencial:**
+    - Consegue lidar com **milhões de requisições por segundo**.
+    - Ideal para **aplicações críticas** que não dependem de HTTP, como jogos online ou streaming de dados.
+    
+1. **Gateway Load Balancer (GLB)**
+- **Camada:** atua como **gateway de rede**.
+- **Uso:** integrar com **appliances de rede** (firewalls, antivírus, VPNs).
+- **Diferencial:**
+    - Faz o tráfego passar pelos dispositivos de segurança sem precisar reconfigurar os clientes.
+- **Exemplo:** uma empresa que precisa que todo o tráfego de entrada passe por um firewall virtual antes de chegar aos servidores.
+
+---
+
+**Resumo rápido:**
+
+- **ALB:** para web, entende o conteúdo das requisições.
+- **NLB:** rápido, para tráfego pesado, qualquer protocolo TCP/UDP.
+- **GLB:** para segurança, roteia o tráfego através de firewalls/appliances.
+
+---
+
+O **Classic Load Balancer (CLB)** é o modelo mais antigo de load balancer da AWS. Ele ainda existe, mas **é recomendado usar ALB ou NLB**
+para novos projetos. 
+
+
+### **Classic Load Balancer (CLB)**
+
+- **Camada:** funciona tanto na **camada 4 (TCP)** quanto na **camada 7 (HTTP/HTTPS)**, mas com recursos mais limitados.
+- **Uso:** antigo, para aplicações herdadas ou simples.
+- **Diferencial:**
+    - Distribui tráfego entre múltiplas instâncias EC2.
+    - Não tem suporte a **roteamento avançado baseado em URL ou cabeçalhos**, como o ALB.
+    - Escalabilidade e performance mais básicas comparadas ao ALB e NLB.
+
+**Resumo rápido:**
+
+> CLB = Load Balancer antigo, básico, ainda funciona mas não tem recursos avançados. Para projetos novos, use ALB (web) ou NLB 
+(alta performance).
