@@ -1,8 +1,5 @@
-# Sample GitLab Project
+<h1 align="center"> Resume - AWS Cloud Foundations </h1>
 
-This sample project shows how a project in GitLab looks for demonstration purposes. It contains issues, merge requests and Markdown files in many branches,
-named and filled with lorem ipsum.
-
-You can look around to get an idea how to structure your project and, when done, you can safely delete this project.
-
-[Learn more about creating GitLab projects.](https://docs.gitlab.com/ee/gitlab-basics/create-project.html)
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=c920c9&labelColor=000000">
+</p>
