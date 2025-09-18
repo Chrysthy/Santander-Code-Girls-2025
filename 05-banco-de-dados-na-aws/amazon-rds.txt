@@ -33,3 +33,6 @@ do banco de dados.
 
 Em resumo, o Amazon RDS é como ter um especialista cuidando do seu banco de dados na nuvem 24 horas por dia, para que você não 
 precise se preocupar com isso.
+
+
+## Só acessarmos a Amazon RDS e escolher qual banco de daos para trabalhar

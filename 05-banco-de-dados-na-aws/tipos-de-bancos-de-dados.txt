@@ -32,4 +32,5 @@ Se você já usa ferramentas da Microsoft, o SQL Server pode ser a escolha mais 
 
 Se você precisa de altíssima performance e está disposto a usar uma tecnologia exclusiva da AWS, Amazon Aurora é o melhor caminho.
 
-Em resumo, o Amazon RDS oferece uma variedade de bancos de dados para que você possa escolher aquele que se encaixa melhor nas necessidades do seu projeto, sem ter o trabalho de instalar e gerenciar tudo do zero.
+Em resumo, o Amazon RDS oferece uma variedade de bancos de dados para que você possa escolher aquele que se encaixa melhor nas 
+necessidades do seu projeto, sem ter o trabalho de instalar e gerenciar tudo do zero.
