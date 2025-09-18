@@ -1,0 +1,13 @@
+Um backup de dados na AWS é basicamente uma cópia de segurança dos seus arquivos e informações importantes. A ideia é que, se 
+algo acontecer com os dados originais (por exemplo, eles serem apagados por engano, danificados ou perdidos), você tenha uma cópia para **restaurar** tudo e não perder nada.
+
+### Por que é importante?
+
+O backup de dados na AWS é fundamental para a **segurança** e a **disponibilidade** dos seus dados. Ele protege você contra:
+
+- **Erros humanos:** Apagar arquivos sem querer.
+- **Falhas de hardware:** Um disco rígido que para de funcionar.
+- **Desastres naturais:** Uma inundação ou incêndio que afete um data center.
+- **Ataques cibernéticos:** Ransomware, que sequestra seus dados e exige resgate.
+
+Com um bom plano de backup, você garante que sua empresa ou seus projetos pessoais continuem funcionando, não importa o que aconteça.
