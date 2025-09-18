@@ -1,0 +1,35 @@
+Tipos de Bancos de Dados no Amazon RDS
+O Amazon RDS suporta vários mecanismos de banco de dados que você pode escolher, dependendo do que seu projeto precisa. 
+
+Os principais são:
+
+MySQL: É um dos bancos de dados mais populares do mundo, usado para sites, blogs e aplicativos. É uma ótima opção para a maioria dos 
+projetos, especialmente os de pequeno e médio porte.
+
+PostgreSQL: Também é muito popular e poderoso. Ele é conhecido por ser mais avançado e ter mais funcionalidades, sendo uma boa escolha 
+para projetos que precisam de mais recursos, como aplicativos de análise de dados.
+
+MariaDB: É uma versão mais moderna do MySQL, criada por seus desenvolvedores originais. É uma alternativa ao MySQL e tem 
+funcionalidades extras e um bom desempenho.
+
+Microsoft SQL Server: É uma opção para quem já usa tecnologias da Microsoft. É muito usado em ambientes corporativos e para sistemas 
+de gerenciamento de negócios.
+
+Oracle: É um banco de dados poderoso e robusto, geralmente usado por grandes empresas. Ele oferece muita segurança e performance, 
+mas costuma ser mais caro.
+
+Amazon Aurora: É um tipo de banco de dados exclusivo da Amazon. Ele é totalmente compatível com MySQL e PostgreSQL, 
+mas é otimizado para a nuvem. Ele é super rápido e confiável, ideal para projetos que precisam de alta performance e escalabilidade, 
+como sites com milhões de acessos.
+
+
+Como escolher o certo?
+A escolha depende do seu projeto:
+
+Se você está começando um site ou blog, MySQL ou PostgreSQL são ótimas e seguras opções.
+
+Se você já usa ferramentas da Microsoft, o SQL Server pode ser a escolha mais fácil.
+
+Se você precisa de altíssima performance e está disposto a usar uma tecnologia exclusiva da AWS, Amazon Aurora é o melhor caminho.
+
+Em resumo, o Amazon RDS oferece uma variedade de bancos de dados para que você possa escolher aquele que se encaixa melhor nas necessidades do seu projeto, sem ter o trabalho de instalar e gerenciar tudo do zero.
