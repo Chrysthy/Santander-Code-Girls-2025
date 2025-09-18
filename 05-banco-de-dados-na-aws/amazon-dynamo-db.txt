@@ -1,0 +1,37 @@
+O que é Amazon DynamoDB?
+O Amazon DynamoDB é um tipo de banco de dados NoSQL (do inglês "Not only SQL"), que funciona como uma tabela gigante. 
+Ele é feito para ser extremamente rápido e aguentar um volume de dados e tráfego gigantesco, sem perder desempenho.
+
+A principal diferença para o RDS é que, no DynamoDB, você não precisa definir a estrutura da tabela com antecedência 
+(como em uma planilha do Excel). Você pode adicionar e remover dados de forma muito flexível, o que o torna ideal para projetos que precisam de escalabilidade e performance.
+
+Principais características
+
+Não tem esquema fixo: Você pode ter itens na mesma tabela com atributos diferentes. Por exemplo, em uma tabela de "Clientes", 
+um cliente pode ter o e-mail e o telefone, enquanto outro pode ter apenas o e-mail. Isso é algo que não é possível no Amazon RDS.
+
+Performance alta: Ele foi projetado para responder em milissegundos, mesmo com bilhões de registros e milhões de requisições por 
+segundo.
+
+Gerenciado pela AWS: Assim como o RDS, a AWS cuida de tudo: backups, atualizações, segurança e a escalabilidade. Você não precisa 
+se preocupar com a manutenção.
+
+Escalabilidade Ilimitada: O DynamoDB aumenta a capacidade de forma automática de acordo com a necessidade. Ele é ideal para 
+aplicativos que podem ter picos de uso imprevisíveis.
+
+Economia: Você só paga pelo que usa, o que é ótimo para projetos que têm variações no tráfego.
+
+
+Exemplo Prático
+
+Imagine que você está criando um aplicativo de jogos. Você precisa salvar o perfil de cada jogador, incluindo pontuação, 
+nível e itens que ele coletou.
+
+Com um banco de dados relacional (RDS): Você teria que criar uma tabela rígida. Se, no futuro, você quiser adicionar um novo tipo 
+de item ou um novo dado, teria que alterar a estrutura da tabela, o que pode ser complicado.
+
+Com o DynamoDB: Cada jogador é um "item" na tabela. Você pode adicionar novas informações (como "medidas de tempo de jogo") 
+a alguns jogadores, sem quebrar a estrutura dos outros. O DynamoDB lida com milhões de jogadores acessando o banco de dados ao mesmo tempo, sem perder velocidade.
+
+Em resumo, o DynamoDB é a escolha ideal para projetos que precisam de um banco de dados super rápido, flexível e que aguente 
+um grande volume de dados, sem que você precise se preocupar em gerenciar a infraestrutura.
