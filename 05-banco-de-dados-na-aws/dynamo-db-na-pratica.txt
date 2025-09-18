@@ -1,0 +1,78 @@
+Como o DynamoDB funciona na prática?
+A principal diferença do DynamoDB é a sua estrutura. Em vez de tabelas rígidas como no RDS, ele usa tabelas flexíveis.
+
+Cada item (uma linha) dentro da tabela tem um identificador único, chamado de Chave Primária. Essa chave é usada para encontrar os 
+itens de forma super rápida.
+
+
+Exemplo: Tabela de Produtos de uma loja virtual
+
+    Imagine que você tem uma loja de eletrônicos e quer guardar as informações dos produtos.
+
+    A sua tabela no DynamoDB seria chamada de Produtos.
+
+    Definindo a Chave Primária: A chave primária é a identificação única de cada item. No nosso caso, podemos usar o ID do Produto.
+
+
+Adicionando os itens: Agora, vamos colocar os produtos na tabela.
+
+    Item 1 (Smartphone):
+
+    ID do Produto: "12345"
+
+    Nome: "Smartphone X"
+
+    Preço: 2500
+
+    Cor: "preto"
+
+    Categoria: "eletrônicos"
+
+
+    Item 2 (Fone de ouvido):
+
+    ID do Produto: "54321"
+
+    Nome: "Fone de ouvido Y"
+
+    Preço: 200
+
+    Cor: "branco"
+
+    Conectividade: "bluetooth"
+
+
+    Item 3 (Carregador):
+
+    ID do Produto: "98765"
+
+    Nome: "Carregador Z"
+
+    Voltagem: "110V"
+
+
+Flexibilidade na prática
+
+Como você pode ver no exemplo acima, a tabela Produtos tem itens com atributos diferentes:
+
+    O smartphone tem a Categoria.
+
+    O fone de ouvido tem a Conectividade.
+
+    O carregador tem a Voltagem.
+
+Essa flexibilidade é o que torna o DynamoDB tão útil. Você não precisa se preocupar em criar uma coluna para cada possível característica do produto. Você simplesmente adiciona a informação que precisa para cada item.
+
+
+Para que serve essa flexibilidade?
+
+Essa estrutura é perfeita para aplicativos que lidam com muitos dados variáveis, como:
+
+    Perfis de usuários em aplicativos de jogos: Cada jogador tem itens, conquistas ou estatísticas diferentes.
+
+    Sessões de usuários em um site: Você pode salvar informações diferentes para cada sessão sem ter um esquema fixo.
+
+    Dados de IoT (Internet das Coisas): Cada sensor pode enviar dados diferentes, como temperatura, umidade ou velocidade.
+
+    Em resumo, o Amazon DynamoDB na prática é um banco de dados que valoriza a velocidade e a flexibilidade. Ele permite que 
+    você trabalhe com dados de forma simples e direta, sem a rigidez das tabelas tradicionais, o que o torna ideal para a nuvem.
