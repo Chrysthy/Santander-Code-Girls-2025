@@ -1,0 +1,56 @@
+Definir uma estratégia de backup e recuperação de dados na AWS é um plano para proteger suas informações usando os serviços 
+da Amazon Web Services. 
+É o guia que decide como, onde e quando fazer cópias de segurança dos seus dados, garantindo que você possa restaurá-los r
+apidamente em caso de qualquer problema.
+
+
+Por que ter uma estratégia na AWS?
+
+    A AWS oferece muitas ferramentas e opções, por isso é importante ter um plano para não se perder. Uma boa estratégia na AWS ajuda a:
+
+    Minimizar a perda de dados: Se algo acontecer, você perde o mínimo de informação possível.
+
+    Reduzir o tempo de inatividade: Sua empresa ou projeto volta a funcionar rapidamente.
+
+    Controlar custos: Você evita gastar dinheiro desnecessariamente com armazenamento.
+
+    Garantir a conformidade: Muitos setores têm regras que exigem backups regulares.
+
+
+Pilares da estratégia na AWS
+
+Uma estratégia eficaz na AWS é construída em três pilares principais:
+
+    1. Backup
+    Aqui, você decide quais serviços da AWS (como EC2, EBS, RDS, S3) precisam de backup e com que frequência. A AWS facilita isso com o AWS Backup, um serviço centralizado que permite criar políticas de backup para vários recursos.
+
+    Exemplo: Você pode criar uma regra no AWS Backup para fazer uma cópia de segurança do seu banco de dados (RDS) todo dia à meia-noite e outra para seu servidor web (EC2) toda semana.
+
+
+    2. Armazenamento
+    Depois de fazer o backup, você precisa decidir onde guardar as cópias. A AWS oferece diferentes opções de armazenamento com preços variados, dependendo de quanto você precisa acessar seus dados.
+
+    Amazon S3: É o serviço mais comum. Você pode usar classes de armazenamento como S3 Standard (para acesso frequente) ou S3 Glacier (para arquivos que você raramente acessa, como backups de longo prazo, que são mais baratos).
+
+    Regra do 3-2-1: Na AWS, essa regra pode ser aplicada assim:
+
+        3 cópias: A original, uma cópia no S3 e outra cópia em outra região da AWS.
+
+        2 mídias: A mídia original e o S3.
+
+        1 fora do local: Uma cópia de backup em uma região da AWS diferente da que você usa no dia a dia.
+
+
+    3. Recuperação
+        Este é o plano de ação para quando o pior acontece. A estratégia de recuperação define como e em quanto tempo você vai 
+        restaurar os dados. Os dois conceitos mais importantes aqui são:
+
+        RPO (Recovery Point Objective): É a quantidade de dados que você pode perder. Se o seu RPO é de 15 minutos, você precisa de 
+        backups a cada 15 minutos para garantir que a perda de dados seja mínima.
+
+        RTO (Recovery Time Objective): É o tempo que você leva para restaurar os dados e colocar seus sistemas de volta no ar. 
+        A AWS oferece ferramentas como o AWS CloudFormation para automatizar a recuperação e reduzir o RTO.
+
+
+Ter uma estratégia bem definida na AWS garante que seus dados estejam sempre seguros e que sua empresa possa se recuperar 
+de qualquer imprevisto de forma rápida e eficiente.
