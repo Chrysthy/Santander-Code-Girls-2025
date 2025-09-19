@@ -1,0 +1,64 @@
+📌 Passo a passo: Hospedando um site estático com CloudFront
+
+1️⃣ Criar bucket S3 para o site
+
+    Console AWS → S3 → Create Bucket.
+
+    Defina nome único (ex.: meusite.com).
+
+    Região: escolha a mais próxima do público-alvo.
+
+    Marque Block all public access como desativado, se quiser que o site seja público.
+
+    Clique em Create bucket.
+
+
+2️⃣ Enviar arquivos do site
+
+    Dentro do bucket → Upload → selecione index.html, CSS, JS, imagens, etc.
+
+    Clique em Upload.
+
+
+3️⃣ Configurar bucket como site estático
+
+    No bucket → Properties → Static website hosting.
+
+    Escolha Enable → Default index document: index.html.
+
+    Salve.
+
+    Teste o site usando o Endpoint gerado pelo S3 (ex.: http://meusite.com.s3-website-us-east-1.amazonaws.com).
+
+
+4️⃣ Criar distribuição CloudFront
+
+    Console AWS → CloudFront → Create Distribution → Web.
+
+    Origin Domain Name: selecione o bucket S3 (aparece na lista).
+
+    Restrict Bucket Access: Yes → cria uma Origin Access Identity (OAI) para CloudFront acessar o bucket.
+
+    Viewer Protocol Policy: Redirect HTTP to HTTPS (melhor para segurança).
+
+    Default Root Object: index.html.
+
+    Clique em Create Distribution → aguarde Deployed.
+
+
+5️⃣ Testar site via CloudFront
+
+    Copie o Domain Name da distribuição (ex.: d1234.cloudfront.net).
+
+    Acesse no navegador → o site será carregado via CloudFront, rápido e globalmente.
+
+
+6️⃣ Boas práticas
+
+    Usar SSL/TLS para HTTPS.
+
+    Ativar caching nos edge locations para melhor performance.
+
+    Integrar com AWS WAF se quiser proteção contra ataques.
+
+    Monitorar métricas no CloudWatch.
