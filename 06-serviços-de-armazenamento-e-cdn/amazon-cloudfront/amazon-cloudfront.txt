@@ -1,0 +1,61 @@
+📌 Entendendo a Distribuição de Conteúdo com Amazon CloudFront
+
+1️⃣ O que é
+
+Amazon CloudFront é um CDN (Content Delivery Network) da AWS.
+
+Ele distribui conteúdos (arquivos, vídeos, APIs, sites) para usuários finais com baixa latência e alta velocidade, usando servidores 
+distribuídos pelo mundo (edge locations).
+
+
+2️⃣ Como funciona
+
+Você armazenar conteúdos no S3 ou outros servidores.
+
+CloudFront replica o conteúdo nos edge locations próximos aos usuários.
+
+Quando alguém acessa, CloudFront entrega o conteúdo da localização mais próxima, acelerando o carregamento.
+
+Suporta conteúdos estáticos e dinâmicos.
+
+
+3️⃣ Principais recursos
+
+Cache inteligente: conteúdos podem ser armazenados temporariamente nos edge locations.
+
+Segurança: integra-se com AWS WAF, SSL/TLS, Signed URLs e Signed Cookies.
+
+Escalabilidade automática: suporta picos de acesso sem precisar ajustar servidores.
+
+Integração com outros serviços AWS: S3, Lambda@Edge, API Gateway, EC2.
+
+
+
+4️⃣ Casos de uso
+
+Hospedagem de sites e aplicações web.
+
+Streaming de vídeos e mídias sob demanda.
+
+Entrega rápida de APIs e arquivos estáticos.
+
+Proteção contra ataques DDoS em conjunto com AWS Shield.
+
+
+
+5️⃣ Benefícios
+
+Reduz latência e melhora experiência do usuário.
+
+Diminui carga nos servidores de origem.
+
+Facilita entrega global de conteúdo.
+
+Segurança integrada com políticas de acesso e criptografia.
+
+
+
+🔹 Resumo rápido
+
+O Amazon CloudFront é a solução da AWS para distribuir conteúdo globalmente, garantindo velocidade, escalabilidade e segurança, 
+entregando dados de forma eficiente de servidores próximos ao usuário final.
