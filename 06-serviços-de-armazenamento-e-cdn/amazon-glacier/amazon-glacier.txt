@@ -1,0 +1,87 @@
+## 📌 Conhecendo o Amazon S3 Glacier
+
+### 1️⃣ O que é
+
+- **Amazon S3 Glacier** (ou **Glacier**) é um serviço da AWS para **armazenamento de arquivos de longo prazo**, com **baixo custo**.
+- Ideal para **arquivos raramente acessados** ou backups que precisam ser mantidos por anos.
+
+---
+
+### 2️⃣ Como funciona
+
+- Os arquivos são armazenados em **vaults** (cofres).
+- Cada arquivo é chamado de **archive**.
+- Não é para acesso rápido; existem diferentes **opções de recuperação**:
+    - **Expedited:** acesso rápido (minutos).
+    - **Standard:** acesso em algumas horas.
+    - **Bulk:** acesso em até 12 horas, mas mais barato.
+
+---
+
+### 3️⃣ Principais recursos
+
+- **Baixo custo** comparado ao S3 Standard.
+- **Alta durabilidade:** 99,999999999% (igual S3).
+- **Controle de acesso:** via **IAM, Bucket Policy e Vault Policy**.
+- **Criptografia automática:** todos os dados são criptografados no servidor (SSE).
+- **Integração com S3:** é possível mover dados do S3 para Glacier usando **lifecycle policies** automaticamente.
+
+---
+
+### 4️⃣ Casos de uso
+
+- Arquivamento de registros financeiros ou médicos.
+- Backups antigos de sistemas.
+- Dados que precisam ser preservados por lei ou auditoria.
+- Redução de custo de armazenamento de dados “inativos”.
+
+---
+
+### 5️⃣ Boas práticas
+
+- Planejar **quando migrar dados do S3 para Glacier** usando **lifecycle rules**.
+- Escolher a **opção de recuperação** de acordo com a urgência.
+- Monitorar acessos e auditoria com **CloudTrail**.
+- Combinar **políticas de acesso** e **criptografia** para segurança completa.
+
+---
+
+👉 **Resumo rápido:**
+
+O **Amazon Glacier é a solução de armazenamento barato e seguro para dados que você quase não acessa**, ideal para backups e arquivos 
+de longo prazo, com criptografia automática e integração total com o S3.
+
+---
+
+## ⏳ Ciclo de vida de dados S3 → Glacier
+
+- **Lifecycle policies (políticas de ciclo de vida)** permitem **mover automaticamente arquivos do S3 para Glacier** com base no tempo 
+de armazenamento.
+
+- Exemplos comuns:
+    - **90 dias:** arquivos que não foram acessados nos últimos 90 dias podem ser movidos do S3 Standard para **Glacier** ou **Glacier 
+    Deep Archive**.
+    - **1 ano:** arquivos que completaram 1 ano no S3 podem ser movidos para Glacier **Deep Archive**, que é ainda mais barato, mas o 
+    acesso leva mais tempo.
+
+### 🔹 Tipos de Glacier para lifecycle
+
+- **Glacier (Standard/Expedited/Bulk):** acesso em minutos a horas.
+- **Glacier Deep Archive:** acesso em até 12 horas, mais barato, indicado para arquivamento de longo prazo.
+
+### 🔹 Benefícios
+
+- Reduz **custos de armazenamento** sem perder durabilidade.
+- Automatiza a **migração de dados antigos**.
+- Mantém **conformidade** com retenção legal ou regulatória.
+
+---
+
+👉 **Resumo rápido:**
+
+Se você tem dados **quase nunca acessados**, pode configurar uma **política de lifecycle**:
+
+- Depois de **90 dias → mover para Glacier**
+- Depois de **1 ano → mover para Glacier Deep Archive**
+
+Isso mantém os dados seguros, criptografados e economiza bastante no custo de armazenamento.
