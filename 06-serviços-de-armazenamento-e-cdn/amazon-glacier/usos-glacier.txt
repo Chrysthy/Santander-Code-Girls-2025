@@ -1,0 +1,113 @@
+
+## ⏰ Quando usar o AWS Glacier
+
+- **Arquivos raramente acessados**: dados antigos, históricos ou backups que você quase nunca precisa consultar.
+- **Compliance e auditoria**: registros financeiros, logs, documentos que precisam ser mantidos por lei.
+- **Redução de custo**: mover dados do **S3 Standard** para Glacier ou **Glacier Deep Archive** para economizar.
+- **Recuperação de desastres**: manter backups de longo prazo com alta durabilidade (99,999999999%).
+
+### 🔹 Escolha do tipo de Glacier
+
+| Tipo | Tempo de recuperação | Custo aproximado | Quando usar |
+| --- | --- | --- | --- |
+| Glacier Standard | Minutos a horas | Baixo | Arquivos raramente acessados, mas que podem precisar rápido |
+| Glacier Deep Archive | Até 12h | Muito baixo | Arquivos quase nunca acessados, arquivamento de longo prazo |
+
+---
+
+## 💰 Preço (atualizado 2025)
+
+- Cobrado **por GB armazenado por mês**.
+- Glacier Standard: **~$0,004 por GB/mês**
+- Glacier Deep Archive: **~$0,00099 por GB/mês**
+- **Recuperação de dados** também tem custo adicional, dependendo da velocidade: Expedited, Standard ou Bulk.
+- **Transferência de dados para fora da AWS** (download) é cobrada separadamente.
+
+---
+
+### 🔹 Resumo rápido
+
+> Use o Glacier quando precisar armazenar dados por longo prazo com baixo custo, mas que não requerem acesso imediato. 
+Para dados acessados raramente, Glacier Standard é suficiente; para arquivamento extremo, use Glacier Deep Archive.
+> 
+
+
+
+## ⏳ Regras de ciclo de vida S3 → Glacier
+
+- **Lifecycle policies** permitem **mover automaticamente objetos do S3 para Glacier** com base no tempo que eles ficam armazenados.
+
+### 🔹 Exemplos comuns de migração
+
+| Tempo no S3 | Ação sugerida | Observação |
+| --- | --- | --- |
+| 90 dias | Mover para **Glacier** | Para arquivos que não foram acessados nos últimos 3 meses; custo mais baixo que S3 Standard. |
+| 180 dias | Mover para **Glacier Deep Archive** | Para arquivos ainda mais antigos, raramente acessados; custo mínimo. |
+| 1 ano ou mais | Manter em **Deep Archive** ou considerar **exclusão automática** | Arquivos antigos mantidos para compliance ou arquivamento de longo prazo. |
+
+---
+
+### 🔹 Benefícios
+
+- Reduz custo de armazenamento automaticamente.
+- Mantém durabilidade e segurança (dados criptografados automaticamente).
+- Facilita conformidade com políticas de retenção de dados.
+
+---
+
+### 🔹 Dica prática
+
+- Combine **Lifecycle rules** com **políticas de acesso** e **criptografia**.
+- Você pode configurar **expiração automática** para arquivos antigos, evitando acúmulo desnecessário.
+
+
+
+
+
+📌 Conhecendo o AWS Snow
+1️⃣ O que é
+
+AWS Snow é uma família de serviços da AWS para transferência física de grandes volumes de dados entre datacenters ou para a nuvem.
+
+Ideal quando a internet não é rápida ou confiável para enviar muitos dados.
+
+2️⃣ Principais tipos
+Serviço	Capacidade	Uso principal
+Snowcone	até 8 TB	Pequenos volumes de dados, portabilidade, ambientes remotos ou desconectados
+Snowball	50 TB ou 80 TB	Transferência de dados de médio a grande porte; backups e migração para AWS
+Snowmobile	até 100 PB	Transferência de dados massivos, como datacenters inteiros; caminhão físico da AWS
+3️⃣ Como funciona
+
+Você solicita o dispositivo no console AWS.
+
+Recebe o dispositivo físico (Snowcone/Snowball).
+
+Copia os dados para ele localmente.
+
+Envia de volta para a AWS, que carrega os dados na nuvem (S3).
+
+Para Snowmobile, o caminhão da AWS faz a transferência física de datacenters completos.
+
+4️⃣ Principais benefícios
+
+Transferência de dados em massa sem depender da internet.
+
+Alta segurança: dados criptografados e rastreamento de dispositivos.
+
+Integração com S3: facilita migração para nuvem.
+
+Redução de tempo: grandes volumes podem ser transferidos mais rápido que pela rede.
+
+5️⃣ Casos de uso
+
+Migração de datacenters para AWS.
+
+Backup de grandes volumes de dados históricos.
+
+Ambientes remotos sem boa conexão à internet.
+
+Transferência de big data para análises na nuvem.
+
+🔹 Resumo rápido
+
+O AWS Snow é a solução física da AWS para mover grandes quantidades de dados com segurança, velocidade e confiabilidade, usando dispositivos portáteis ou caminhões, quando a internet não é suficiente.
