@@ -1,0 +1,121 @@
+📌 Aplicando Políticas de Acesso aos Recursos do S3
+
+
+1️⃣ Tipos de políticas
+
+    Bucket Policy
+
+        Aplicada diretamente ao bucket.
+
+        Define quem pode acessar todos os objetos dentro do bucket.
+
+        Útil para controlar acesso público ou de contas específicas.
+
+
+    IAM Policy
+
+        Vinculada a usuários, grupos ou roles do AWS IAM.
+
+        Pode controlar acesso a múltiplos buckets ou serviços.
+
+        Permite permissões mais detalhadas com base em funções.
+
+
+    ACL (Access Control List)
+
+        Controla acesso a nível de objeto ou bucket.
+
+        Hoje é mais usada para compatibilidade com sistemas antigos; AWS recomenda usar policies.
+
+        Bloquear todo o acesso público para evitar vazar dados.
+
+
+
+2️⃣ Como aplicar na prática
+
+    a) Bucket Policy:
+
+    No console AWS S3, selecione o bucket → Permissions → Bucket Policy.
+
+    Escreva a política em JSON, especificando:
+
+        Effect: Allow ou Deny
+
+        Principal: quem terá acesso
+
+        Action: quais ações são permitidas (s3:GetObject, s3:PutObject)
+
+        Resource: objeto(s) ou bucket alvo
+
+
+    Salve a política → ela entra em vigor imediatamente.
+
+        Exemplo: permitir leitura de todos os objetos para qualquer usuário:
+
+            {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::meu-bucket/*"
+                }
+            ]
+            }
+
+
+
+b) IAM Policy:
+
+    No console AWS, vá em IAM → Users/Groups/Roles → Policies → Create Policy
+
+    Use o editor visual ou JSON para definir permissões.
+
+    Anexe a policy ao usuário, grupo ou role que precisa de acesso.
+
+
+
+c) ACL (menos recomendada):
+
+    Pode ser usada para conceder acesso individual a objetos específicos.
+
+    Mais limitada e difícil de gerenciar em larga escala.
+
+
+
+d) Criptografia integrada
+
+    - Server-Side Encryption (SSE): criptografia ao salvar no S3. Tipos:
+        - SSE-S3: AWS gerencia a chave automaticamente.
+        - SSE-KMS: usa AWS KMS; permite controlar permissões de chaves.
+        - SSE-C: você fornece sua própria chave.
+
+    - Client-Side Encryption (CSE): criptografa antes de enviar; S3 armazena já criptografado.
+    
+    - Políticas podem exigir criptografia:
+        - Ex.: negar upload de objetos não criptografados.
+        - Controlar quem pode usar ou gerenciar chaves KMS.
+
+
+
+
+3️⃣ Boas práticas
+
+    Sempre aplicar o princípio do menor privilégio: dê apenas as permissões necessárias.
+
+    Evitar buckets públicos desnecessários.
+
+    Monitorar acessos com CloudTrail ou S3 Access Logs.
+
+    Preferir Bucket + IAM Policy ao invés de ACLs.
+
+    Usar conditions para restringir acesso por IP, horário ou criptografia.
+
+    Bloquear todo o acesso público para evitar vazar dados.
+
+
+
+👉 Resumo rápido:
+Para proteger recursos no S3, você aplica políticas de acesso (Bucket Policy, IAM Policy ou ACL), definindo quem, o que e onde pode 
+acessar. Políticas bem aplicadas garantem segurança, controle e conformidade sem complicar o uso.
