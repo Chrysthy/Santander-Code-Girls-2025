@@ -1,0 +1,111 @@
+📌 Introdução ao Amazon S3
+
+O que é:
+O Amazon S3 (Simple Storage Service) é um serviço de armazenamento em nuvem da AWS. Ele permite guardar e recuperar qualquer 
+volume de dados, de forma escalável, segura e com alta disponibilidade.
+
+Como funciona:
+
+    Os arquivos são armazenados em buckets (baldes virtuais).
+
+    Cada objeto (arquivo) tem uma chave única (key) que o identifica dentro do bucket. Cada bucket tem um nome globalmente único, então
+    não pode repetir nomes.
+
+    Suporta diferentes classes de armazenamento, otimizadas para custo, performance ou arquivamento: S3 Standard, S3 Glacier e
+    S3 Intelligent-Tiering
+
+
+Principais recursos:
+
+    Escalabilidade praticamente ilimitada.
+
+    Segurança e controle de acesso com IAM, políticas e criptografia.
+
+    Versionamento para manter múltiplas versões de um objeto.
+
+    Integração com outros serviços da AWS (ex.: Lambda, CloudFront, Athena).
+
+
+Casos de uso:
+
+    Backup e recuperação de dados.
+
+    Hospedagem de sites estáticos.
+
+    Data lakes e análise de big data.
+
+    Armazenamento de logs, imagens e vídeos.
+
+    Integração com sistemas de Machine Learning.
+
+
+Benefícios:
+
+    Paga apenas pelo que usar (pay as you go).
+
+    Alta durabilidade (99,999999999%) e disponibilidade.
+
+    Diferentes opções de custo dependendo da frequência de acesso (S3 Standard, S3 Glacier, S3 Intelligent-Tiering).
+
+👉 Em resumo: o Amazon S3 é a solução principal de armazenamento na nuvem da AWS, sendo versátil, seguro e essencial em arquiteturas 
+modernas de cloud computing.
+
+
+
+📌 Políticas de Acesso no Amazon S3
+
+O que são:
+Conjuntos de regras em formato JSON que definem quem pode acessar um bucket/objeto e o que pode fazer (ler, escrever, excluir, listar).
+
+
+Onde aplicar:
+
+    Bucket Policy → Política aplicada direto no bucket, controlando acesso a todos os objetos dentro dele.
+
+    IAM Policy → Vinculada a usuários, grupos ou roles do IAM. Define permissões gerais de acesso ao S3 (ou outros serviços).
+
+    ACLs (Access Control Lists) → Mais antigas, usadas para controle fino em objetos individuais. Hoje, a AWS recomenda usar policies 
+    em vez de ACLs.
+
+
+Componentes principais:
+
+    Effect → Permite (Allow) ou nega (Deny) a ação.
+
+    Action → O que o usuário pode fazer (ex.: s3:GetObject, s3:PutObject).
+
+    Resource → Em qual bucket/objeto a regra se aplica.
+
+    Principal → Quem tem acesso (usuário, conta, serviço).
+
+    Condition → Regras extras (ex.: permitir acesso apenas de um IP específico).
+
+
+Exemplo simples (permitir leitura pública em um bucket):
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::meu-bucket/*"
+    }
+  ]
+}
+
+
+Boas práticas:
+
+    Usar princípio do menor privilégio (dar só as permissões necessárias).
+
+    Evitar deixar buckets públicos, a não ser que seja intencional (ex.: site estático).
+
+    Preferir Bucket Policy + IAM Policy em vez de ACLs.
+
+    Usar logs e monitoramento (AWS CloudTrail, S3 Access Logs).
+
+    
+
+👉 Em resumo: as políticas de acesso controlam como e por quem os dados no S3 podem ser acessados, garantindo segurança e flexibilidade.
