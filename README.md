@@ -22,3 +22,10 @@
 <img src=".github/Diagrama-Entidade-Relacionamento(DER).png" alt="gif do projeto">
 
 <br>
+
+## 🛠 Technologies
+
+- AWS
+- Git and GitHub
+
+<br>
