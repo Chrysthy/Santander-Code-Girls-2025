@@ -12,3 +12,13 @@
   <a href="#-contributing">Contributing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#support">Support</a>  
 </p>
+
+## 📸 Screenshots
+
+<img src=".github/gif-do-projeto.gif" alt="gif do projeto">
+
+<br>
+
+<img src=".github/Diagrama-Entidade-Relacionamento(DER).png" alt="gif do projeto">
+
+<br>
