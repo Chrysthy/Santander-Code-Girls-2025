@@ -1,0 +1,108 @@
+Amazon ECS vs Amazon EKS 
+
+
+Amazon ECS (Elastic Container Service)
+
+O que é: Serviço da AWS para rodar e gerenciar containers Docker de forma simplificada.
+
+Como funciona:
+
+    Você cria uma Task Definition, que descreve como o container deve rodar (imagem, memória, CPU, portas).
+
+    ECS roda os containers em clusters, usando EC2 (você gerencia os servidores) ou Fargate (serverless, AWS gerencia os servidores).
+
+    ECS cuida da distribuição, escalabilidade e manutenção dos containers.
+
+
+Vantagens:
+
+    Mais simples e fácil de começar.
+
+    Escala automática dentro do ECS.
+
+    Menor curva de aprendizado.
+
+    Integração direta com outros serviços AWS.
+
+
+Limitações:
+
+    Menos flexível que Kubernetes.
+
+    Não é ideal para cenários muito complexos de microserviços ou ambientes híbridos.
+
+
+Quando usar:
+
+    Aplicações simples ou microserviços pequenos.
+
+    Processamento de tarefas em lote ou background.
+
+    Quem quer containers na AWS sem aprender Kubernetes.
+
+
+Exemplo prático:
+
+    Uma loja online em Node.js dentro de um container.
+
+    ECS mantém a aplicação rodando, escala conforme o número de visitantes, e você não precisa se preocupar com servidores.
+
+
+
+
+Amazon EKS (Elastic Kubernetes Service)
+
+O que é: Serviço gerenciado de Kubernetes na AWS. Permite usar Kubernetes sem configurar tudo manualmente.
+
+Como funciona:
+
+    Você cria um cluster EKS.
+
+    AWS gerencia o control plane (parte central do Kubernetes).
+
+    Você adiciona nodes (EC2 ou Fargate) que vão rodar os containers.
+
+    Com kubectl ou ferramentas de Kubernetes, você gerencia pods, deployments e services.
+
+
+Vantagens:
+
+    Escalabilidade avançada e flexível.
+
+    Alta disponibilidade e confiabilidade.
+
+    Total flexibilidade e recursos do Kubernetes.
+
+    Ideal para microserviços complexos e ambientes híbridos.
+
+
+Limitações:
+
+    Curva de aprendizado alta; exige conhecimento em Kubernetes.
+
+    Pode ser mais caro devido à complexidade e recursos envolvidos.
+
+
+Quando usar:
+
+    Aplicações grandes, com muitos microserviços.
+
+    Cenários que exigem deploys avançados, replicação e balanceamento automático.
+
+    Quem quer total controle sobre containers e integração com Kubernetes.
+
+
+Exemplo prático:
+
+Uma plataforma com frontend em React e backend em Python, cada um em containers.
+
+Kubernetes garante que se algum container cair, outro suba automaticamente.
+
+EKS gerencia todo o cluster e nodes na AWS, mantendo alta disponibilidade.
+
+
+📝 Resumo final
+
+ECS: simples, rápido e fácil de usar, ideal para quem quer containers na AWS sem complicação.
+
+EKS: poderoso, escalável e flexível, ideal para ambientes complexos com Kubernetes.
