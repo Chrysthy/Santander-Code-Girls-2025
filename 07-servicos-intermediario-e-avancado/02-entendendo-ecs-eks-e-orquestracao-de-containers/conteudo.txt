@@ -1,0 +1,23 @@
+📌 Introdução ao Amazon ECS e Amazon EKS
+
+Amazon ECS (Elastic Container Service)
+É o serviço da AWS para orquestrar containers. Ele ajuda a rodar, 
+parar e gerenciar containers Docker sem você precisar se preocupar 
+em configurar tudo manualmente.
+
+👉 Pense nele como “um gerente de containers” que distribui seus containers em máquinas (EC2 ou Fargate).
+
+Amazon EKS (Elastic Kubernetes Service)
+É o serviço da AWS que gerencia clusters Kubernetes. Ou seja, em vez 
+de você montar e manter toda a infraestrutura do Kubernetes na mão, 
+a AWS cuida disso para você.
+
+👉 Ele é usado quando você quer aproveitar todo o poder do Kubernetes, mas sem a dor de cabeça de configurar do zero.
+
+
+✅ Resumindo:
+
+O ECS é focado em containers Docker na AWS, simples e direto.
+
+O EKS é para quem quer usar Kubernetes na nuvem AWS, com mais 
+flexibilidade e escalabilidade.
