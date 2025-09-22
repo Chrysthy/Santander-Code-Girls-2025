@@ -1,0 +1,69 @@
+📌 Amazon Lambda (AWS Lambda)
+
+O que é
+
+É um serviço da Amazon (AWS) que permite rodar código sem precisar criar ou cuidar de 
+servidores.
+
+Você só escreve sua função (seu código), coloca na AWS e ela roda apenas quando for 
+chamada.
+
+
+Como funciona
+
+Você cria uma função Lambda (pode ser em várias linguagens, como Python, Node.js, Java).
+
+Define o gatilho (quando a função deve rodar).
+
+Exemplo: quando um arquivo é enviado para o S3, quando alguém acessa uma API, quando 
+acontece um evento no DynamoDB etc.
+
+O Lambda executa automaticamente o código e depois encerra.
+
+
+Vantagens
+
+Sem servidor fixo: você não precisa configurar ou pagar por um servidor sempre ligado.
+
+Escala automática: se muitas pessoas chamarem sua função ao mesmo tempo, a AWS cria 
+várias instâncias para atender todo mundo.
+
+Custo baixo: você paga apenas pelo tempo de execução (em milissegundos) e quantidade 
+de vezes que rodou.
+
+Integração fácil com outros serviços da AWS (S3, DynamoDB, API Gateway, SNS etc.).
+
+
+Limitações
+
+Tempo máximo de execução: hoje é até 15 minutos por função.
+
+Não é ideal para aplicações que precisam rodar o tempo todo.
+
+Se precisar de muito controle do servidor, talvez Lambda não seja a melhor opção.
+
+
+📌 Quando usar AWS Lambda
+
+Para processar arquivos (ex.: toda vez que um usuário envia uma foto para o S3, o Lambda 
+redimensiona).
+
+Para criar APIs rápidas usando o API Gateway + Lambda.
+
+Para tarefas automáticas (ex.: rodar um script todo dia às 8h).
+
+Para processar eventos em tempo real (ex.: novas mensagens em um sistema).
+
+
+📌 Exemplo simples
+
+👉 Situação: você tem um site onde o usuário sobe uma imagem. Toda vez que a imagem é 
+enviada para o bucket S3, você quer criar automaticamente uma versão menor (thumbnail).
+
+
+Fluxo:
+
+Usuário envia foto.jpg para o Amazon S3.
+O S3 dispara um evento dizendo: "Chegou arquivo novo!".
+Esse evento chama a função AWS Lambda.
+A função Lambda abre a imagem, gera uma versão reduzida e salva de volta no S3 (foto-thumb.jpg).
