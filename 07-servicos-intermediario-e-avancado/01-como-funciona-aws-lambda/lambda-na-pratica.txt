@@ -1,0 +1,60 @@
+# Amazon Lambda na prática – Passo a passo
+
+### 1. Acesse a AWS
+
+- Entre no site da **AWS Console** (console.aws.amazon.com).
+- Faça login na sua conta.
+
+### 2. Vá até o serviço Lambda
+
+- No menu de busca, digite **Lambda**.
+- Clique em **Create function (Criar função)**.
+
+### 3. Crie a função
+
+- Escolha **Author from scratch** (criar do zero).
+- Dê um **nome para sua função** (ex.: `minha-funcao`).
+- Escolha a **linguagem** (Python, Node.js, etc.).
+- Clique em **Create function**.
+
+### 4. Escreva o código
+
+- Dentro da função, você verá um editor.
+- Escreva um código simples, por exemplo em Python:
+
+```python
+def lambda_handler(event, context):
+    return "Olá, Lambda está funcionando!"
+
+```
+
+### 5. Configure o gatilho (Trigger)
+
+- Vá em **Add trigger (Adicionar gatilho)**.
+- Escolha como a função será chamada:
+    - **API Gateway** → se quiser acessar pela web.
+    - **S3** → se quiser rodar quando um arquivo for enviado.
+    - **CloudWatch** → se quiser rodar em horário programado.
+
+### 6. Teste
+
+- Clique em **Test** dentro da função.
+- A AWS vai pedir para criar um **evento de teste** (pode ser qualquer JSON simples).
+- Clique em **Run** e veja o resultado na tela.
+
+### 7. Deploy (Publicar)
+
+- Quando estiver pronto, clique em **Deploy**.
+- Agora sua função já está ativa na AWS e responde ao gatilho configurado.
+
+---
+
+# 🎯 Exemplo prático bem rápido
+
+- Você criou uma função que imprime “Olá Mundo”.
+- Colocou como gatilho o **API Gateway**.
+- Resultado: quando acessar o link da API, a função Lambda vai rodar e devolver “Olá Mundo”.
+
+---
+
+👉 Simples assim: **cria → escreve código → define gatilho → testa → publica**.
