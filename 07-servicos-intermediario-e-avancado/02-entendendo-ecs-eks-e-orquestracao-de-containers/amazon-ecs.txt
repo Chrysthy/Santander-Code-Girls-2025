@@ -1,0 +1,75 @@
+Amazon ECS (Elastic Container Service)
+
+O que é
+
+É o serviço da AWS para rodar e gerenciar containers Docker.
+Ele ajuda você a colocar suas aplicações em containers na nuvem sem precisar configurar toda a infraestrutura manualmente.
+
+
+Como funciona
+
+    Você empacota sua aplicação em um container Docker.
+
+    Sobe essa imagem para o Amazon ECR (Elastic Container Registry) ou outro repositório de imagens.
+
+    No ECS, você cria uma Task Definition (descrição de como rodar seu container: imagem, portas, memória, CPU).
+
+    ECS usa Clusters (conjunto de máquinas virtuais EC2 ou o Fargate, que é “sem servidor”) para rodar suas Tasks.
+
+    ECS distribui, escala e mantém seus containers funcionando.
+
+
+
+Modos de execução
+
+    EC2 Launch Type → você gerencia os servidores (EC2) onde os containers vão rodar.
+
+    Fargate Launch Type → você não precisa de servidor; a AWS roda os containers para você (serverless para containers).
+
+
+
+Vantagens
+
+    Gerenciamento simplificado de containers Docker.
+
+    Escalabilidade automática (pode aumentar/diminuir a quantidade de containers conforme a demanda).
+
+    Integração fácil com outros serviços AWS (CloudWatch, ELB, IAM etc.).
+
+    Você escolhe entre cuidar dos servidores (EC2) ou deixar a AWS cuidar disso (Fargate).
+
+
+
+Quando usar o ECS
+
+    Para rodar aplicações baseadas em microserviços.
+
+    Quando você já tem aplicações em Docker e quer levar para a nuvem.
+
+    Para processar tarefas em lote (ex.: conversão de vídeos, processamento de imagens).
+
+    Quando precisa de escala automática sem se preocupar com infraestrutura.
+
+
+
+Exemplo simples
+
+    👉 Imagine que você criou uma loja online em Node.js e colocou em um container Docker.
+
+    Com o ECS, o fluxo seria:
+
+    Você envia a imagem Docker para o Amazon ECR.
+
+    No ECS, cria uma Task Definition dizendo: “Rodar minha loja online com 512 MB de RAM e abrir a porta 3000”.
+
+    Cria um Service para manter essa Task sempre rodando (se cair, ele levanta de novo).
+
+    ECS distribui automaticamente em instâncias EC2 ou no Fargate.
+
+    Você acessa sua loja online com alta disponibilidade.
+
+
+
+✅ Resumindo:
+O Amazon ECS é como um gerente automático para containers Docker, que garante que eles rodem, escalam e se mantenham disponíveis na 
+AWS, de forma simples e integrada.
