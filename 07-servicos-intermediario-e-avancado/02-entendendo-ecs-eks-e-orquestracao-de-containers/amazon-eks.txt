@@ -1,0 +1,78 @@
+Amazon EKS (Elastic Kubernetes Service)
+
+O que é
+
+É o serviço da AWS que gerencia clusters Kubernetes na nuvem.
+Com ele, você não precisa configurar manualmente o Kubernetes, ele cuida da infraestrutura e do plano de controle.
+Ideal para quem quer usar Kubernetes para orquestrar containers com mais flexibilidade.
+
+
+Como funciona
+
+    Você cria um cluster EKS na AWS.
+
+    O EKS gerencia automaticamente o plano de controle (control plane) do Kubernetes.
+
+    Você cria nodes (EC2 ou Fargate) que vão rodar os containers.
+
+    Com kubectl ou ferramentas de Kubernetes, você gerencia pods, deployments, services e ingress.
+
+
+
+Componentes principais
+
+    Cluster → conjunto de recursos do Kubernetes (control plane + nodes).
+
+    Nodes → servidores que executam os containers.
+
+    Pods → menor unidade do Kubernetes, geralmente 1 ou mais containers.
+
+    Deployment → garante que uma quantidade específica de pods esteja sempre rodando.
+
+    Service → expõe seus pods para comunicação interna ou externa.
+
+
+
+Vantagens
+
+    Escalabilidade poderosa: Kubernetes lida com centenas ou milhares de containers.
+
+    Alta disponibilidade: EKS replica o plano de controle em várias zonas de disponibilidade.
+
+    Integração com AWS: IAM, VPC, CloudWatch, ALB/ELB.
+
+    Flexibilidade total: você define regras de deploy, replicação, balanceamento de carga e escalonamento automático.
+
+
+
+Quando usar
+
+    Para aplicações complexas que usam muitos containers e microserviços.
+
+    Quando você quer usar Kubernetes mas sem montar todo o cluster manualmente.
+
+    Para orquestrar workloads híbridas, combinando EC2 e Fargate.
+
+    Quando precisa de escala automática e confiável para produção.
+
+
+
+Exemplo simples
+
+👉 Imagine que você tem uma API em Python e um frontend em React, cada um em containers separados:
+
+    Cria um cluster EKS na AWS.
+
+    Adiciona nodes EC2 ou usa Fargate para rodar os containers.
+
+    Cria deployments para backend e frontend.
+
+    Cria services para expor a API e o site.
+
+    Kubernetes garante que se algum container cair, outro suba no lugar automaticamente.
+
+    
+
+✅ Resumindo:
+O Amazon EKS é como ter o Kubernetes pronto e gerenciado na AWS, permitindo orquestrar containers de forma escalável, confiável e 
+automatizada, sem se preocupar com a configuração do cluster.
