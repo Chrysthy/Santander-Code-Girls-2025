@@ -68,3 +68,32 @@
 
 O **Amazon SNS** é como uma “central de alto-falantes” da AWS: você fala uma vez no microfone (publica no tópico) e todos que estão 
 conectados (assinantes) recebem a mensagem ao mesmo tempo.
+
+
+
+### Tipos de Tópicos do SNS
+
+1. **Standard Topics (padrão)**
+    - ✅ **Entrega em alta taxa** (throughput praticamente ilimitado).
+    - ✅ **Baixa latência** (quase em tempo real).
+    - ✅ **Vários assinantes recebem a mesma mensagem** (fan-out).
+    - ❌ **Sem ordenação garantida** (mensagens podem chegar fora de ordem).
+    - ❌ **Pode haver duplicação de mensagens**.
+        
+        👉 Indicado para notificações em massa, integrações fan-out (ex: SNS → SQS → Lambda).
+        
+2. **FIFO Topics (First-In-First-Out)**
+    - ✅ **Ordenação garantida** (mensagens chegam na mesma ordem em que foram publicadas).
+    - ✅ **Entrega exatamente uma vez** (sem duplicações).
+    - ❌ **Throughput limitado** (máx. 300 msgs/s por tópico, podendo aumentar com batching).
+        
+        👉 Indicado para casos onde **ordem e consistência** são essenciais, como transações financeiras, logs de auditoria ou 
+        atualização de estoque.
+        
+
+---
+
+**Resumo:**
+
+- **Standard** = mais rápido, mais escalável, mas sem ordem garantida.
+- **FIFO** = mais confiável em termos de ordem e duplicação, mas com limite de throughput.
