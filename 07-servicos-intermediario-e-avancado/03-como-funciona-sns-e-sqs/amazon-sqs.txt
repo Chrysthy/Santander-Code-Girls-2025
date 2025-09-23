@@ -1,0 +1,82 @@
+📩 Amazon SQS – Simple Queue Service
+
+O Amazon SQS é um serviço totalmente gerenciado de filas de mensagens, que permite desacoplar sistemas distribuídos e processar 
+grandes volumes de mensagens de forma escalável, segura e confiável.
+
+Ele funciona como um buffer: aplicações produtoras enviam mensagens para a fila, e aplicações consumidoras leem e processam essas 
+mensagens de forma assíncrona.
+
+
+🔹 Tipos de Filas no SQS
+
+
+    Standard Queue (fila padrão)
+
+    ✅ Throughput ilimitado (milhões de mensagens por segundo).
+
+    ✅ Alta disponibilidade e escalabilidade automática.
+
+    ✅ Entrega pelo menos uma vez (at-least-once delivery).
+
+    ❌ Sem ordenação garantida → mensagens podem chegar fora de ordem.
+
+    ❌ Pode haver duplicação de mensagens.
+    👉 Boa para casos de processamento em massa onde a ordem não importa (ex: processamento de imagens, envio de notificações, big data).
+
+
+
+FIFO Queue (First-In-First-Out)
+
+    ✅ Ordem garantida → a ordem de envio é preservada na entrega.
+
+    ✅ Entrega exatamente uma vez (exactly-once processing).
+
+    ✅ Suporte a Message Group ID → garante ordenação dentro de grupos específicos.
+
+    ❌ Throughput limitado → 300 transações por segundo (pode chegar a 3.000 com batching).
+    👉 Boa para casos onde a ordem e consistência são críticas (ex: transações financeiras, controle de estoque, logs de auditoria).
+
+
+
+🔹 Recursos Importantes do SQS
+
+    Durabilidade → mensagens são replicadas em múltiplas zonas de disponibilidade (AZs).
+
+    Retention Period → mensagens podem ficar armazenadas de 1 minuto até 14 dias.
+
+    Visibility Timeout → tempo que uma mensagem fica "invisível" após ser lida por um consumidor, evitando que outros a processem em 
+    paralelo (default: 30s, máximo: 12h).
+
+    Dead Letter Queue (DLQ) → fila especial para armazenar mensagens que não puderam ser processadas com sucesso após várias tentativas.
+
+    Long Polling → consumidores podem aguardar até 20s por novas mensagens, reduzindo custo de requisições desnecessárias.
+
+    Escalabilidade automática → não há necessidade de gerenciar servidores para suportar picos de mensagens.
+
+    Segurança → integração com IAM para controle de acesso e suporte a criptografia em repouso (KMS) e em trânsito (TLS).
+
+    Integração com outros serviços → pode acionar AWS Lambda, EC2, ECS, EKS, ou ser integrado com SNS (padrão fan-out: SNS → várias 
+    filas SQS).
+
+
+🔹 Casos de Uso
+
+    Processamento de pedidos em e-commerce.
+
+    Fila de tarefas para microserviços.
+
+    Integração entre sistemas legados e modernos.
+
+    Processamento assíncrono de dados em aplicações de larga escala.
+
+    Desacoplamento de produtores e consumidores em arquiteturas distribuídas.
+
+
+
+📌 Resumo Final:
+
+SQS Standard = mais rápido, escalável, mas sem ordenação garantida e com possível duplicação.
+
+SQS FIFO = mais lento, porém garante ordem e entrega única.
+
+Sempre usar DLQ para lidar com falhas e Visibility Timeout para evitar processamento duplicado.
