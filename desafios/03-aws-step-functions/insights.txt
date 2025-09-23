@@ -1,0 +1,46 @@
+## 📝 Insights e Aprendizados
+
+- O Step Functions permite reduzir a complexidade de orquestrar processos distribuídos.  
+- O uso de Express Workflows é vantajoso para eventos rápidos e em alta escala.  
+- Standard Workflows são mais indicados para fluxos de longa duração e monitoramento detalhado.  
+- A integração nativa com outros serviços da AWS simplifica muito a automação.  
+- Usar SQS FIFO para garantir ordem no processamento quando necessário.
+- States como Choice facilitam decisões condicionais sem código extra.
+- Workflows simples ajudam no aprendizado, mas podem crescer para cenários complexos de microservices.
+
+## Conceitos Fundamentais do AWS Step Functions
+
+Máquina de Estados (State Machine)
+
+    Representa todo o workflow.
+    Definida em Amazon States Language (ASL), que é um JSON declarativo.
+    Contém a sequência de passos (states) e como eles se conectam.
+
+Estados (States)
+
+    Cada etapa do fluxo. Os principais são:
+
+        Task: executa uma ação (ex: chamar Lambda, ECS, DynamoDB).
+        Choice: tomada de decisão (if/else).
+        Wait: pausa por um tempo definido.
+        Parallel: executa estados em paralelo.
+        Fail/Success: indica o fim do fluxo (com erro ou sucesso).
+
+Execução
+
+    Cada vez que o workflow roda, é criada uma execução com histórico próprio.
+
+Standard x Express Workflows
+
+    Standard: para execuções longas (até 1 ano), mantém histórico detalhado.
+    Express: execuções rápidas (até 5 min), alta escala, custo menor.
+
+Retry e Catch
+
+    Você define tentativas automáticas em caso de falha.
+    Pode redirecionar erros para outro fluxo (ex: enviar mensagem de erro para SQS).
+
+Integração com AWS Services
+
+    Step Functions conversa direto com Lambda, S3, ECS, DynamoDB, SQS, SNS, SageMaker, Glue, etc.
+    Isso reduz código e facilita a automação.
