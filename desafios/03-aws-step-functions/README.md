@@ -20,17 +20,20 @@ Este laboratório tem como objetivo consolidar o aprendizado sobre orquestraçã
 
 ## 📊 Diagrama (Mermaid)
 
+```mermaid
 stateDiagram-v2
-    [*] --> UploadS3
-    UploadS3: Arquivo enviado ao S3
-    UploadS3 --> ValidarArquivo
-    ValidarArquivo: Lambda 1 - Validação
-    ValidarArquivo --> ProcessarArquivo
-    ProcessarArquivo: Lambda 2 - Processamento
-    ProcessarArquivo --> SalvarS3
-    SalvarS3: Salvar saída no S3
-    SalvarS3 --> NotificarSNS
-    NotificarSNS: Enviar notificação (SNS)
-    NotificarSNS --> AtualizarDynamo
-    AtualizarDynamo: Armazenar metadados no DynamoDB
-    AtualizarDynamo --> [*]
+
+Start --> UploadS3 : "Arquivo enviado ao S3"
+
+UploadS3 --> ValidarArquivo : "Lambda 1 - Validação"
+
+ValidarArquivo --> ProcessarArquivo : "Lambda 2 - Processamento"
+
+ProcessarArquivo --> SalvarS3 : "Salvar saída no S3"
+
+SalvarS3 --> NotificarSNS : "Enviar notificação (SNS)"
+
+NotificarSNS --> AtualizarDynamo : "Armazenar metadados no DynamoDB"
+
+AtualizarDynamo --> End
+```
