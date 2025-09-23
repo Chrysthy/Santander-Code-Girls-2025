@@ -1,0 +1,70 @@
+# Amazon SNS (Simple Notification Service)
+
+### O que é
+
+- Serviço da AWS para **envio de mensagens e notificações** de forma rápida, escalável e confiável.
+- Funciona no modelo **pub/sub (publish/subscribe)**:
+    - Um **publisher** (quem envia) publica uma mensagem.
+    - Um ou mais **subscribers** (quem recebe) recebem essa mensagem.
+
+---
+
+### Como funciona
+
+1. Você cria um **tópico** no SNS.
+    - O tópico é como um “canal de mensagens”.
+2. Diferentes sistemas ou usuários se **inscrevem (subscribe)** nesse tópico.
+    - Pode ser via e-mail, SMS, fila SQS, função Lambda, HTTP endpoint etc.
+3. Quando alguém **publica (publish)** uma mensagem nesse tópico, o SNS envia a mensagem automaticamente para todos os inscritos.
+
+---
+
+### Protocolos suportados
+
+- **E-mail** → Envia mensagens para caixas de entrada.
+- **SMS** → Envia notificações por celular.
+- **HTTP/HTTPS** → Envia requisições para endpoints de APIs.
+- **AWS Lambda** → Dispara funções Lambda automaticamente.
+- **Amazon SQS** → Integra com filas para processamento posterior.
+
+---
+
+### Vantagens
+
+- **Escalável**: suporta milhões de mensagens por segundo.
+- **Confiável**: entrega garantida com redundância.
+- **Flexível**: vários tipos de assinantes (e-mail, SMS, sistemas, Lambda).
+- **Baixo custo**: você paga por quantidade de mensagens enviadas.
+
+---
+
+### Quando usar
+
+- Para **notificações em massa** (e-mail, SMS).
+- Para **disparar eventos automáticos** (ex.: upload de arquivo gera alerta).
+- Para **integrar sistemas diferentes** usando pub/sub.
+- Para **avisos críticos** em sistemas (alerta de falha, uso de recursos).
+
+---
+
+### Exemplo simples
+
+👉 Imagine que você tem um sistema de pedidos online.
+
+1. Cria um **tópico SNS** chamado `NovoPedido`.
+2. Configura três assinantes:
+    - O e-mail do gerente da loja.
+    - Um número de celular para SMS.
+    - Uma função Lambda que processa o pedido.
+3. Quando um cliente faz um pedido, o sistema publica uma mensagem no tópico `NovoPedido`.
+4. O SNS envia automaticamente:
+    - Um e-mail para o gerente.
+    - Um SMS de notificação.
+    - Chama a função Lambda que atualiza o estoque.
+
+---
+
+✅ **Resumindo:**
+
+O **Amazon SNS** é como uma “central de alto-falantes” da AWS: você fala uma vez no microfone (publica no tópico) e todos que estão 
+conectados (assinantes) recebem a mensagem ao mesmo tempo.
