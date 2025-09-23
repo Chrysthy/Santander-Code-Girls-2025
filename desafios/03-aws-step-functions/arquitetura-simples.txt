@@ -1,0 +1,16 @@
+Cenário: Processamento de Arquivo
+
+- O usuário envia um arquivo para o Amazon S3.
+
+- O AWS Step Functions inicia o fluxo automaticamente (via evento S3).
+
+- O fluxo orquestra duas funções AWS Lambda:
+
+    Lambda 1 → valida e processa o arquivo.
+
+    Lambda 2 → gera um relatório de saída.
+
+- O resultado é salvo novamente no Amazon S3.
+
+- Uma mensagem de sucesso é enviada via SNS (ou SQS, se fosse fila).
+
