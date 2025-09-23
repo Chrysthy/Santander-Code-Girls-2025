@@ -1,0 +1,30 @@
+Objetivo:
+Criar um fluxo automatizado para armazenar e otimizar imagens que os usuários fazem upload.
+
+Fluxo passo a passo:
+
+    O usuário (Actor) faz upload da foto pelo sistema.
+
+    A imagem original é salva em um Bucket S3 (Fotos originais).
+
+    Esse upload dispara uma função Lambda.
+
+    A função Lambda redimensiona/otimiza a imagem automaticamente.
+
+    A imagem otimizada é salva em outro Bucket S3 (Fotos otimizadas).
+
+    O usuário ou outros serviços podem acessar a versão otimizada da imagem.
+
+
+
+
+Esse é um exemplo de arquitetura serverless com AWS Lambda + S3, muito usado em sistemas que precisam lidar com uploads de usuários, 
+como:
+
+    Plataformas de redes sociais.
+
+    Sites de e-commerce (miniaturas de produtos).
+
+    Aplicativos de fotografia ou armazenamento de arquivos.
+
+    Blogs ou CMS que precisam gerar versões otimizadas para web.
