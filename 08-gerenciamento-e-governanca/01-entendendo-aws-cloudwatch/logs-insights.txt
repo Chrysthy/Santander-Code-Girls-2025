@@ -1,0 +1,33 @@
+O CloudWatch Logs Insights é um recurso do AWS CloudWatch que permite consultar e analisar logs de forma interativa e em tempo real.
+
+### Conceito principal
+
+Ele funciona como uma “linguagem de consulta” para os logs armazenados no CloudWatch Logs, permitindo filtrar, agrupar e extrair 
+informações rapidamente.
+
+
+### O que dá para fazer com Logs Insights:
+
+- Pesquisar erros e eventos específicos em aplicações.
+- Analisar grandes volumes de logs de forma rápida.
+- Criar gráficos a partir das consultas.
+- Integrar resultados com **CloudWatch Dashboards** para visualização.
+- Ajudar a diagnosticar falhas e otimizar desempenho de sistemas.
+
+### Exemplo de consulta simples
+
+Se você quer encontrar erros em um log:
+
+```sql
+fields @timestamp, @message
+| filter @message like /ERROR/
+| sort @timestamp desc
+| limit 20
+
+```
+
+🔎 Esse exemplo retorna as últimas 20 mensagens de erro registradas no log.
+
+
+👉 Em resumo: o **CloudWatch Logs Insights** é a “ferramenta de lupa” dentro do CloudWatch para você investigar e entender melhor o 
+que está acontecendo nos sistemas.
