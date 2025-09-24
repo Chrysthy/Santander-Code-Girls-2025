@@ -1,0 +1,12 @@
+Alguns casos de uso do AWS CloudWatch, de forma simples e direta:
+
+- **Monitoramento de recursos** → acompanhar métricas de CPU, memória, disco e rede de instâncias EC2 ou outros serviços da AWS.
+- **Alertas automáticos** → criar alarmes que disparam notificações (via SNS) ou ações automáticas quando um limite é atingido (ex: CPU 
+acima de 80%).
+- **Centralização de logs** → coletar e analisar logs de aplicações, Lambdas ou contêineres em um só lugar.
+- **Dashboards em tempo real** → visualizar métricas em gráficos personalizados para acompanhar a saúde da infraestrutura.
+- **Detecção de anomalias** → usar métricas para identificar comportamentos fora do padrão antes que causem falhas maiores.
+- **Automação de respostas** → acionar ações como aumentar automaticamente instâncias (auto scaling) ou reiniciar recursos problemáticos.
+- **Análise de aplicações serverless** → rastrear desempenho e falhas em funções Lambda.
+
+👉 Em resumo: o CloudWatch é usado tanto para **observar** quanto para **reagir automaticamente** ao que acontece nos sistemas.
