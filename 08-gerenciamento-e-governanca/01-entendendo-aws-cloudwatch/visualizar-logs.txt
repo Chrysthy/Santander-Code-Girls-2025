@@ -1,0 +1,33 @@
+Visualizar logs no AWS CloudWatch é o jeito de acompanhar o que suas aplicações e recursos estão registrando em tempo real.
+
+Como funciona a visualização de logs:
+
+Envio de logs
+
+    Serviços da AWS (como Lambda, ECS, API Gateway, etc.) e até aplicações próprias enviam logs para o CloudWatch Logs.
+
+
+Grupos de Logs (Log Groups)
+
+    Cada aplicação ou serviço tem um Log Group, que é como uma pasta para organizar os logs.
+
+    Dentro de um grupo, existem Streams de Logs (fluxos individuais, por exemplo, cada instância de EC2 gera um stream).
+
+
+Acesso pelo Console
+
+    No console da AWS, você pode abrir um Log Group, escolher um Log Stream e ver as entradas de log em ordem cronológica.
+
+
+Filtros e busca
+
+    É possível aplicar filtros para encontrar erros, mensagens específicas ou intervalos de tempo.
+
+
+Integração com Logs Insights
+
+    Para análises mais avançadas, você pode usar o CloudWatch Logs Insights e escrever consultas sobre os dados.
+
+
+👉 Em resumo: visualizar logs no CloudWatch significa navegar entre grupos e streams, ler mensagens em tempo real e, se necessário, 
+aplicar filtros para encontrar rapidamente o que você precisa.
