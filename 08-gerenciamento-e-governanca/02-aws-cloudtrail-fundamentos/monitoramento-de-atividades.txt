@@ -1,0 +1,33 @@
+O monitoramento de atividades no AWS CloudTrail significa acompanhar e analisar todas as ações feitas nos recursos da sua conta AWS.
+
+Como funciona:
+
+Registro de eventos
+
+    O CloudTrail grava cada chamada de API feita por usuários, aplicações ou serviços (ex.: criação de uma instância EC2, exclusão de um bucket S3, alteração em permissões do IAM).
+
+
+Armazenamento dos registros
+
+    Esses eventos ficam disponíveis no console por 90 dias.
+    Também podem ser enviados automaticamente para S3 (armazenamento de longo prazo) ou CloudWatch Logs (para análise em tempo real).
+
+
+Monitoramento em tempo real
+
+    Com integração ao CloudWatch, é possível criar alarmes para detectar atividades específicas (ex.: alguém tentando deletar recursos críticos).
+
+
+Análise e auditoria
+
+    Você pode filtrar os eventos no console do CloudTrail para verificar quem fez a ação, quando, de onde (IP) e qual foi o resultado.
+
+
+✅ Exemplo prático de monitoramento:
+
+Se um usuário alterar as permissões de um bucket S3, o CloudTrail registra essa ação.
+O evento pode ser enviado ao CloudWatch, que dispara um alerta via SNS para a equipe de segurança.
+
+
+👉 Em resumo: o monitoramento no CloudTrail garante visibilidade total das atividades na conta AWS, ajudando em auditoria, segurança e 
+resposta a incidentes.
