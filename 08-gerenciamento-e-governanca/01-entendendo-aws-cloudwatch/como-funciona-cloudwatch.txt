@@ -1,0 +1,26 @@
+O AWS CloudWatch funciona como um sistema central de coleta e análise de dados sobre os recursos da AWS e aplicações. 
+Ele segue este fluxo básico:
+
+Coleta de dados
+
+    Os serviços da AWS (como EC2, Lambda, S3, DynamoDB, etc.) enviam automaticamente métricas e logs para o CloudWatch.
+    Você também pode enviar métricas e logs personalizados das suas aplicações.
+
+
+Armazenamento e processamento
+
+    Esses dados ficam disponíveis em tempo quase real dentro do CloudWatch, prontos para consulta e análise.
+
+
+Visualização e análise
+
+    Com as métricas e logs, você pode criar dashboards, consultar registros e identificar padrões ou problemas.
+
+
+Ações automatizadas
+
+    É possível configurar alarms que disparam notificações (via SNS, por exemplo) ou executam ações automáticas (como escalar 
+    instâncias EC2 ou reiniciar recursos).
+
+👉 Em resumo: o CloudWatch observa tudo o que acontece na sua aplicação e infraestrutura, e permite reagir de forma proativa ou 
+automática.
