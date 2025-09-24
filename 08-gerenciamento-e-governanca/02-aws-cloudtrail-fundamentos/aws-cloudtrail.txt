@@ -1,0 +1,8 @@
+O AWS CloudTrail é um serviço da AWS que registra e rastreia todas as ações feitas dentro da conta AWS. É um complemento do 
+CloudWatch
+
+Em outras palavras, ele guarda um histórico de eventos relacionados a chamadas de API, sejam feitas pelo console, CLI, SDKs ou outros 
+serviços.
+
+👉 Em resumo: o CloudTrail serve para auditoria, segurança e conformidade, permitindo saber quem fez o quê, quando e de onde dentro 
+da sua conta AWS.
