@@ -1,0 +1,12 @@
+O AWS CloudWatch é o serviço de monitoramento e observabilidade da AWS. Ele permite coletar, visualizar e analisar métricas, logs e 
+eventos de praticamente todos os serviços da AWS e até de aplicações locais.
+
+Com ele, você consegue:
+
+    Acompanhar o desempenho de sistemas em tempo real.
+    Configurar alertas (alarms) para reagir automaticamente a falhas ou picos de uso.
+    Criar dashboards personalizados para visualizar métricas.
+    Centralizar logs e eventos em um único lugar.
+
+👉 Em resumo: o CloudWatch ajuda a garantir que suas aplicações e infraestrutura estejam funcionando bem, mostrando quando algo foge 
+do esperado.
