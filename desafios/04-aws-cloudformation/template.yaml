@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Template simples para criar um bucket S3"
+
+Resources:
+  MeuPrimeiroBucketS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "meu-primeiro-bucket-${AWS::AccountId}"
+      AccessControl: Private
