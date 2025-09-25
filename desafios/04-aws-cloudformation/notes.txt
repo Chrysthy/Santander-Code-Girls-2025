@@ -1,0 +1,21 @@
+# 📝 Anotações e Insights sobre o CloudFormation
+
+## 📌 O que aprendi
+
+- O CloudFormation permite criar recursos AWS a partir de arquivos declarativos (YAML ou JSON).
+- É possível versionar templates no GitHub para reaproveitar em diferentes projetos.
+- A criação de uma *Stack* nada mais é do que a execução de um template.
+
+## 🚀 Passo a passo que segui
+
+1. Template `template.yaml`.
+2. No console da AWS, serviço **CloudFormation**.
+3. Upload do arquivo `.yaml`.
+4. Validar o template e depois **Criar Stack**.
+5. Após alguns minutos, o bucket S3 foi provisionado automaticamente.
+
+## 💡 Insights pessoais
+
+- Ter a infraestrutura como código facilita muito a **reprodutibilidade**.
+- Com pequenas alterações no template, consigo **replicar ambientes** de forma rápida.
+- O mais importante é sempre **validar o template** antes de rodar, para evitar erros.
