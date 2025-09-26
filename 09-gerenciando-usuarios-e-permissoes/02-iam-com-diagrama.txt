@@ -1,0 +1,113 @@
+AWS IAM é o serviço da Amazon que permite controlar quem pode acessar os recursos da AWS e de que forma. Ele é essencial para segurança na 
+nuvem.
+
+
+Principais componentes:
+
+    Usuários (Users) → Pessoas ou serviços que precisam acessar AWS.
+
+    Grupos (Groups) → Conjunto de usuários que compartilham permissões.
+
+    Funções (Roles) → Permissões atribuídas a serviços, aplicativos ou usuários temporários.
+
+    Políticas (Policies) → Regras que definem permissões (o que pode ou não fazer).
+
+
+
+2. Diagrama Conceitual do IAM
+
+Visualmente, podemos imaginar:
+
+          ┌──────────────┐
+          │   Usuário    │
+          │   Alice      │
+          └─────┬────────┘
+                │ pertence a
+                ▼
+          ┌──────────────┐
+          │   Grupo      │
+          │   Devs       │
+          └─────┬────────┘
+                │ tem
+                ▼
+          ┌──────────────┐
+          │   Política   │
+          │  AcessoS3    │
+          └──────────────┘
+
+
+Explicação:
+
+    Alice é um usuário da AWS.
+    Ela faz parte do grupo Devs, que já possui permissões definidas.
+    A política AcessoS3 determina que Alice pode ler e escrever em buckets do S3.
+
+
+
+
+3. Funções (Roles) no IAM
+
+Roles são úteis quando um serviço ou usuário externo precisa acessar recursos AWS sem ter credenciais permanentes.
+
+┌─────────────── ┐           ┌───────────────┐
+│ Usuário Externo│  assume   │   Role IAM    │
+│   App Web      │─────────▶ │  EC2AccessS3 │
+└─────────────── ┘           └─────┬─────────┘
+                                   │ permite
+                                   ▼
+                            ┌─────────────┐
+                            │  Bucket S3  │
+                            └─────────────┘
+
+
+Explicação:
+
+    Um app web externo assume a role EC2AccessS3 temporariamente.
+    Assim, ele pode acessar recursos do S3 sem precisar de credenciais fixas.
+
+
+
+4. Políticas IAM
+
+Gerenciadas pela AWS (AWS Managed) → Políticas prontas, ex.: AmazonS3FullAccess.
+Gerenciadas pelo Cliente (Customer Managed) → Criadas pela sua equipe, com regras específicas.
+
+Inline → Políticas aplicadas diretamente a um usuário, grupo ou role.
+
+Diagrama de políticas:
+
+┌───────────────┐
+│     Usuário   │
+└─────┬─────────┘
+      │ recebe
+      ▼
+┌─────────────── ┐
+│   Policy IAM   │
+│  (S3ReadOnly)  │
+└─────────────── ┘
+
+
+
+5. Fluxo de Autenticação e Autorização
+
+Usuário faz login com suas credenciais.
+AWS verifica identidade.
+
+IAM aplica políticas para decidir se ele pode ou não realizar ações no serviço solicitado.
+
+
+Fluxo visual:
+
+Usuário Alice
+     │ login
+     ▼
+AWS IAM verifica credenciais
+     │
+     ▼
+Aplica políticas
+     │
+     ▼
+Permissão concedida ou negada
+     │
+     ▼
+Acesso ao serviço AWS
