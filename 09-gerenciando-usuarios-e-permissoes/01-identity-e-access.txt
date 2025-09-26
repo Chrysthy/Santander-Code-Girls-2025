@@ -1,0 +1,15 @@
+O AWS Identity and Access Management (IAM) é o serviço da AWS que permite gerenciar identidades (usuários, grupos, funções) 
+e controlar o acesso aos recursos da nuvem.
+
+👉 Em resumo: o IAM garante que a pessoa ou aplicação certa tenha o nível de permissão adequado dentro da sua conta AWS.
+
+
+Com ele, você pode:
+
+    Criar e gerenciar usuários e grupos.
+
+    Definir políticas de acesso (quem pode fazer o quê).
+
+    Usar roles (funções) para serviços e aplicações acessarem recursos sem precisar de credenciais fixas.
+
+    Ativar MFA (autenticação multifator) para mais segurança.
