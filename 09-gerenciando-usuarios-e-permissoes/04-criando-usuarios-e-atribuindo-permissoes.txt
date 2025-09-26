@@ -1,0 +1,93 @@
+🔹 1. Criando Usuários no AWS IAM
+
+Usuários no IAM representam pessoas ou aplicações que precisam acessar a AWS.
+
+Passo a passo no Console AWS:
+
+    Acesse o serviço IAM.
+    Clique em Users → Add Users.
+    Defina o nome do usuário (ex.: alice.dev).
+
+
+Escolha o tipo de acesso:
+
+    Acesso ao Console da AWS → login com senha.
+    Acesso Programático → gera chave de acesso (Access Key e Secret Key) para usar via CLI/SDK/API.
+
+
+Clique em Next para definir permissões.
+
+
+🔹 2. Atribuindo Permissões
+
+Há 3 formas principais de dar permissões a um usuário:
+
+    a) Adicionar o usuário a um Grupo
+
+        Grupos já têm políticas associadas.
+
+        Boa prática: gerenciar permissões no nível de grupo, não de usuário.
+
+        Usuário Alice ──> Grupo Devs ──> Política S3ReadWrite
+
+
+    b) Copiar permissões de outro usuário
+
+        Útil quando um novo usuário precisa ter os mesmos acessos de alguém já existente.
+
+        Exemplo: novo desenvolvedor recebe as mesmas permissões que outro dev.
+
+
+    c) Anexar políticas diretamente ao usuário
+
+        Escolhe manualmente políticas gerenciadas (AWS Managed ou Customer Managed).
+
+        Exemplo: dar AmazonEC2ReadOnlyAccess só para um usuário.
+
+        Usuário Bob ──> Política EC2ReadOnly
+
+
+
+⚠️ Não é recomendado usar essa abordagem sempre, pois dificulta manutenção a longo prazo.
+
+
+🔹 3. Tipos de Políticas que podem ser atribuídas
+
+    AWS Managed Policies (prontas da AWS)
+
+        Exemplo: AdministratorAccess, AmazonS3ReadOnlyAccess.
+
+    Customer Managed Policies (criadas por você)
+
+    Personalizadas para necessidades específicas.
+
+    Inline Policies (direto no usuário/grupo/role)
+
+
+Casos muito específicos, não reutilizáveis.
+
+🔹 4. Exemplo Visual Completo
+            ┌───────────────┐
+            │ Usuário Alice │
+            └──────┬────────┘
+                   │ membro de
+                   ▼
+            ┌───────────────┐
+            │ Grupo Devs    │
+            └──────┬────────┘
+                   │ tem
+                   ▼
+          ┌─────────────────────┐
+          │ Política S3ReadWrite│
+          └─────────────────────┘
+
+
+➡ Alice herda automaticamente a permissão de ler e escrever em buckets S3 porque pertence ao grupo Devs.
+
+
+🔹 5. Boas Práticas
+
+    Crie grupos (Admins, Devs, Auditors, etc.) e gerencie permissões neles.
+    Sempre use o princípio do menor privilégio (dar apenas o necessário).
+    Prefira Managed Policies → menos manutenção.
+    Evite conceder AdministratorAccess a usuários que não precisem.
