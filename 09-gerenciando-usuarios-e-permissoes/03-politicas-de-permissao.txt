@@ -1,0 +1,115 @@
+1. O que são Grupos no IAM
+
+No AWS IAM, grupos servem para organizar usuários que compartilham as mesmas permissões.
+
+
+Por que usar grupos?
+
+Evita atribuir permissões individualmente.
+Facilita manutenção: adicionar ou remover usuários do grupo ajusta automaticamente suas permissões.
+
+
+Exemplos de grupos comuns:
+
+Grupo	Função principal
+Admins	Permissão total em todos os recursos
+Devs	Acesso a recursos de desenvolvimento
+Auditors	Apenas leitura para auditoria
+
+
+
+Diagrama conceitual:
+
+Usuário Alice ── pertence a ──> Grupo Devs ── possui ──> Políticas de permissão
+Usuário Bob   ── pertence a ──> Grupo Admins ── possui ──> Políticas de permissão
+
+
+
+
+2. O que são Políticas de Permissão
+
+Políticas (Policies) definem o que é permitido ou negado a um usuário, grupo ou role na AWS.
+Uma política é composta por:
+
+    Ações (Actions): o que pode ser feito, ex.: s3:GetObject ou ec2:StartInstances.
+    Recursos (Resources): onde a ação pode ser aplicada, ex.: um bucket específico do S3.
+    Condições (Conditions): restrições adicionais, ex.: horário, MFA ou IP.
+
+
+
+Exemplo de política simples (leitura em um bucket S3):
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::meu-bucket/*"]
+    }
+  ]
+}
+
+
+
+3. Como Grupos e Políticas se relacionam
+
+    Usuário → pertence a um ou mais grupos.
+
+    Grupo → possui políticas associadas.
+
+    Política → define permissões específicas que o grupo ou usuário herda.
+
+
+
+Diagrama de fluxo:
+
+Usuário Alice
+     │ pertence a
+     ▼
+Grupo Devs
+     │ possui
+     ▼
+Política S3ReadWrite
+     │ permite
+     ▼
+Acesso ao bucket S3
+
+
+Alice herda as permissões do grupo Devs.
+Se Alice tiver políticas individuais, elas se somam às do grupo, exceto se houver Deny explícito.
+
+
+4. Tipos de Políticas
+
+Managed Policies (Gerenciadas)
+
+Pela AWS: prontas para uso (AmazonS3ReadOnlyAccess).
+Pelo cliente: criadas para necessidades específicas.
+
+
+
+Inline Policies
+
+Aplicadas diretamente a um usuário, grupo ou role.
+Útil para casos específicos, mas não podem ser compartilhadas.
+
+
+Diagrama de associação:
+
+Usuário ──> Inline Policy
+     │
+     ▼
+Grupo ──> Managed Policy
+     │
+     ▼
+Role ──> Managed Policy
+
+
+
+5. Boas práticas
+
+Atribua permissões preferencialmente via grupos, não individualmente.
+Siga o princípio do menor privilégio: só dê o que o usuário realmente precisa.
+Use Managed Policies sempre que possível.
+Teste permissões antes de aplicar em produção.
