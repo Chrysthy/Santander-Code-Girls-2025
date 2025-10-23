@@ -1,0 +1,38 @@
+**O AWS CloudFormation permite criar e gerenciar infraestrutura na nuvem de forma automatizada usando arquivos de configuração como código. Isso garante consistência, agilidade e controle total sobre os recursos.**
+
+Aqui está um resumo direto e essencial:
+
+### ⚙️ O que é o AWS CloudFormation
+
+- Serviço da AWS que permite **provisionar e gerenciar recursos de infraestrutura como código (IaC)**.
+- Usa arquivos em **JSON ou YAML** chamados *templates* para definir recursos como EC2, S3, RDS, VPC, IAM etc.
+- Cria **stacks**, que são conjuntos de recursos definidos e gerenciados como uma única unidade.
+
+### 🧱 Componentes principais
+
+- **Template**: Documento que descreve os recursos e suas configurações.
+- **Stack**: Instância de um template em execução.
+- **Parameters**: Valores dinâmicos que tornam o template reutilizável.
+- **Outputs**: Informações geradas após a criação da stack (como IPs, nomes de recursos).
+- **Change Sets**: Permitem visualizar alterações antes de aplicar modificações em uma stack existente.
+
+### 🚀 Benefícios
+
+- **Automação total**: Criação, atualização e exclusão de recursos sem intervenção manual.
+- **Padronização**: Evita erros humanos e garante consistência entre ambientes.
+- **Versionamento**: Templates podem ser versionados e armazenados em repositórios Git.
+- **Integração com DevOps**: Funciona bem com pipelines CI/CD e ferramentas como CodePipeline e CodeBuild.
+
+### ✅ Boas práticas
+
+- **Modularize templates**: Separe por função (rede, banco, aplicação).
+- **Use validação de templates** antes de aplicar.
+- **Controle de acesso com IAM**: Restrinja quem pode criar ou modificar stacks.
+- **Audite com CloudTrail**: Rastreie ações feitas via CloudFormation.
+- **Combine com SSM e Secrets Manager** para gerenciar configurações e segredos.
+
+### 📚 Exemplos de uso
+
+- Criar uma aplicação web com EC2, RDS e Load Balancer em minutos.
+- Provisionar ambientes de desenvolvimento idênticos para diferentes equipes.
+- Automatizar a criação de redes privadas (VPCs) com sub-redes e gateways.
