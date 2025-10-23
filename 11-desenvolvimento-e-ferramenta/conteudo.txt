@@ -1,0 +1,39 @@
+**A AWS CLI e os SDKs permitem gerenciar serviços da AWS de forma automatizada e programável. A CLI usa comandos no terminal; os SDKs integram a AWS com linguagens como Python, Java e JavaScript.**
+
+Aqui está um resumo direto e essencial:
+
+### 🧰 AWS CLI (Command Line Interface)
+
+- **Interface de linha de comando** para interagir com serviços AWS.
+- Permite executar comandos como criar instâncias EC2, gerenciar buckets S3, configurar permissões IAM etc.
+- Ideal para **automação de tarefas**, scripts e administração rápida.
+- Requer instalação local e configuração com credenciais (chave de acesso e segredo).
+- Exemplo de comando:
+  ```bash
+  aws s3 ls
+  ```
+  Lista os buckets S3 da conta.
+
+### 💻 AWS SDKs (Software Development Kits)
+
+- **Bibliotecas para linguagens de programação** como Python (boto3), JavaScript (AWS SDK for JS), Java, C#, Go, entre outras.
+- Permitem integrar serviços AWS diretamente em aplicações.
+- Usados para **desenvolver sistemas que interagem com a nuvem**, como upload de arquivos, envio de e-mails via SES, leitura de dados do DynamoDB etc.
+- Suportam autenticação, tratamento de erros, e chamadas assíncronas.
+
+### 🔄 Diferenças principais
+
+| Recurso        | AWS CLI                         | AWS SDKs                          |
+|----------------|----------------------------------|-----------------------------------|
+| Interface      | Linha de comando                 | Código em linguagem de programação |
+| Uso ideal      | Scripts, administração           | Desenvolvimento de aplicações     |
+| Instalação     | Ferramenta única                 | Varia por linguagem               |
+| Flexibilidade  | Limitada a comandos              | Alta, com controle total via código |
+
+### ✅ Boas práticas
+
+- Use **perfis de credenciais** para separar ambientes (produção, teste).
+- Combine CLI com **scripts shell ou PowerShell** para automações.
+- Use SDKs com **frameworks modernos** para criar aplicações escaláveis.
+- Audite chamadas com **CloudTrail** para rastrear ações feitas via CLI ou SDK.
+
