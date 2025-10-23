@@ -42,4 +42,3 @@ flowchart LR
 
 - AWS CloudFormation Documentation
 - AWS S3 Documentation
-- GitHub Markdown Guide
