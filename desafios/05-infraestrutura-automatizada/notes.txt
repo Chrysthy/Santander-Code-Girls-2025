@@ -1,0 +1,12 @@
+AWS CloudFormation - Checklist Rápido
+
+[x] Entender Infraestrutura como Código (IaC)
+[x] Conhecer Stacks e Templates (YAML/JSON)
+[x] Criar Stack a partir de template
+[x] Gerenciar recursos e dependências
+[x] Interpretar logs e corrigir erros
+[x] Diferenciar CloudFormation vs Terraform
+[x] Documentar passos no README.md
+[x] Organizar repositório (templates, imagens, anotações)
+[x] Versionar no GitHub
+[x] Planejar, testar e documentar toda infraestrutura
