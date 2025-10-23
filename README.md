@@ -15,11 +15,9 @@
 
 ## 📸 Screenshots
 
-<img src=".github/gif-do-projeto.gif" alt="gif do projeto">
+<img src=".github/logo-santander-code-girls.png" width="300" alt="Logo Santander Code Girls - 2025">
 
 <br>
-
-<img src=".github/Diagrama-Entidade-Relacionamento(DER).png" alt="gif do projeto">
 
 <br>
 
