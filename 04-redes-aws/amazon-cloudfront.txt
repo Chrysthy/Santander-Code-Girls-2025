@@ -1,0 +1,37 @@
+Amazon CloudFront é o serviço de Content Delivery Network (CDN) da AWS, projetado para acelerar a entrega de conteúdo estático e 
+dinâmico — como imagens, vídeos, arquivos HTML, CSS e JavaScript — com baixa latência, alta performance e segurança ou seja, 
+uma rede de distribuição de conteúdo global.
+
+🚀 Como ele funciona?
+
+Cache de Conteúdo: Quando um usuário solicita um arquivo, o CloudFront verifica se o arquivo já está armazenado (em cache) no 
+local de borda mais próximo do usuário.
+
+Entrega Rápida: Se o arquivo estiver em cache, o CloudFront o entrega instantaneamente ao usuário, eliminando a necessidade de 
+buscar o conteúdo no servidor de origem (o seu servidor principal). Isso reduz a latência e acelera o tempo de carregamento.
+
+Origem do Conteúdo: Se o arquivo não estiver em cache, o CloudFront o solicita da sua origem (que pode ser um bucket do Amazon S3, uma instância EC2, um Elastic Load Balancer ou qualquer servidor web). Uma vez que o CloudFront obtém o arquivo, ele o armazena em cache para futuras solicitações.
+
+
+
+
+Principais Vantagens do CloudFront
+
+    Melhora o Desempenho do Site: Ao entregar o conteúdo de um local mais próximo do usuário, o CloudFront reduz significativamente o 
+    tempo de carregamento das páginas.
+
+    Reduz a Carga no Servidor de Origem: Como a maioria das solicitações é atendida pelos locais de borda, seu servidor principal recebe 
+    menos tráfego, o que melhora seu desempenho e reduz os custos de largura de banda.
+
+    Alta Disponibilidade e Escalabilidade: A rede global do CloudFront é projetada para lidar com picos de tráfego e grandes volumes de 
+    dados, garantindo que seu conteúdo esteja sempre disponível.
+
+    Segurança Integrada: O CloudFront oferece proteção contra ataques DDoS (Distributed Denial of Service) e se integra com o AWS WAF 
+    (Web Application Firewall) para proteger seus aplicativos.
+
+    Integração com a AWS: Ele se conecta facilmente com outros serviços da AWS, como S3 (para hospedagem de conteúdo estático), EC2 e 
+    Route 53, facilitando a criação de uma arquitetura de nuvem robusta.
+
+Em resumo, o CloudFront é uma ferramenta essencial para qualquer site ou aplicação que busca entregar conteúdo com rapidez e 
+segurança para um público global. Ele melhora a experiência do usuário, diminui os custos operacionais e aumenta a resiliência da sua infraestrutura.
+
