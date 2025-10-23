@@ -1,0 +1,27 @@
+
+## 🪜 Passo a Passo da Criação
+
+1. Criar arquivo `template.yaml` com o seguinte conteúdo:
+
+```yaml
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Criação de um bucket S3 com CloudFormation - Chrystine DIO Lab"
+
+Resources:
+  MeuBucketS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: chrystine-s3-lab-2025
+Acessar o AWS Console → CloudFormation
+
+Selecionar Create stack → With new resources (standard)
+
+Fazer upload do template YAML
+
+Dar um nome à stack, ex: stack-s3-chrystine
+
+Criar a stack e aguardar status CREATE_COMPLETE
+
+Verificar no serviço S3 que o bucket foi criado corretamente
+
+💡 Dica: nomes de buckets devem ser únicos globalmente. Se receber erro de conflito, altere o nome no template.
