@@ -1,0 +1,16 @@
+**Práticas recomendadas de segurança na nuvem incluem controle de acesso, criptografia, monitoramento contínuo e uso de ferramentas nativas de proteção.**
+
+Aqui vai um resumo direto e essencial sobre segurança na nuvem:
+
+### 🔐 Práticas recomendadas
+
+- **Controle de acesso rigoroso**: Use autenticação multifator (MFA), políticas de menor privilégio e gestão de identidades para limitar quem acessa o quê.
+- **Criptografia de dados**: Proteja dados em repouso e em trânsito com criptografia forte. Isso evita vazamentos mesmo em caso de invasão.
+- **Monitoramento e auditoria contínuos**: Implemente ferramentas de observabilidade para detectar atividades suspeitas e gerar alertas em tempo real.
+- **Segmentação de rede**: Separe ambientes (produção, teste, desenvolvimento) e use firewalls para limitar o tráfego entre eles.
+- **Backup e recuperação**: Tenha planos de backup automatizados e testes regulares de recuperação para garantir continuidade em caso de falhas.
+- **Atualizações e correções constantes**: Mantenha sistemas e aplicações atualizados para evitar vulnerabilidades conhecidas.
+- **Segurança compartilhada**: Entenda que a responsabilidade é dividida entre o provedor de nuvem e o cliente. Cada parte deve cumprir seu papel.
+- **Ferramentas nativas de segurança**: Use os recursos oferecidos pelo provedor (como Google Cloud Armor, AWS Shield, Azure Security Center) para reforçar a proteção.
+- **Treinamento e conscientização**: Capacite equipes para reconhecer riscos e seguir boas práticas no uso da nuvem.
+- **Gestão de conformidade**: Certifique-se de que os serviços em nuvem atendem a normas como LGPD, ISO 27001, SOC 2, entre outras.
