@@ -1,0 +1,34 @@
+**O AWS CodeDeploy automatiza a implantação de aplicações em servidores físicos, instâncias EC2 e serviços como Lambda, garantindo atualizações seguras, consistentes e sem tempo de inatividade.**
+
+Aqui está um resumo direto e essencial:
+
+### 🚀 O que é o AWS CodeDeploy
+
+- Serviço gerenciado que **automatiza o processo de implantação de código** em ambientes locais ou na nuvem.
+- Suporta **EC2, servidores on-premises e funções Lambda**.
+- Reduz erros manuais e permite **atualizações contínuas e seguras**.
+
+### 🔧 Como funciona
+
+- Você define um **arquivo AppSpec.yml** que descreve como o código deve ser implantado.
+- O CodeDeploy usa **agentes instalados nas instâncias** ou integrações com Lambda para executar as etapas.
+- Pode ser acionado por **pipelines CI/CD**, como AWS CodePipeline, ou manualmente via CLI/console.
+
+### 📦 Tipos de implantação
+
+- **In-place (EC2/servidores)**: Atualiza diretamente as instâncias existentes.
+- **Blue/Green (Lambda/EC2)**: Cria novo ambiente e redireciona o tráfego após testes, permitindo rollback fácil.
+
+### ✅ Benefícios
+
+- **Zero downtime**: Com blue/green deployment, evita interrupções.
+- **Monitoramento automático**: Verifica integridade da aplicação e reverte se necessário.
+- **Flexível e escalável**: Funciona com qualquer linguagem ou framework.
+- **Integração com ferramentas DevOps**: Funciona com GitHub, Jenkins, CodePipeline etc.
+
+### 📋 Boas práticas
+
+- Use **scripts de validação** antes e depois da implantação.
+- Configure **notificações via SNS** para acompanhar o status.
+- Combine com **CloudWatch e CloudTrail** para auditoria e monitoramento.
+- Teste em ambientes de staging antes de ir para produção.
