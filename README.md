@@ -15,7 +15,10 @@
 
 ## 📸 Screenshots
 
-<img src=".github/logo-santander-code-girls.png" width="300" alt="Logo Santander Code Girls - 2025">
+<p align="center">
+  <img src=".github/logo-santander-code-girls.png" width="400" alt="Logo Santander Code Girls - 2025">
+</p>
+
 
 <br>
 
@@ -43,5 +46,6 @@
 ## 🌟 Support
 
 <p> If you like this project, please give it a star ⭐ and share it with others! 😄 </p>
+
 
 
