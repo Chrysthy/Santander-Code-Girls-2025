@@ -1,0 +1,34 @@
+**O AWS WAF protege aplicações web contra ataques como SQL Injection, XSS e DDoS usando regras personalizadas e gerenciadas. Ele se integra com serviços como CloudFront, ALB e API Gateway.**
+
+Aqui está um resumo direto e essencial:
+
+### 🛡️ O que é o AWS WAF
+
+- **AWS WAF (Web Application Firewall)** é um firewall de aplicações web que protege contra ameaças comuns como:
+  - *SQL Injection (SQLi)*
+  - *Cross-Site Scripting (XSS)*
+  - *Ataques de negação de serviço (DDoS)*
+- Atua na camada de aplicação, filtrando tráfego HTTP/S malicioso antes que chegue à sua aplicação.
+
+### 🔧 Funcionalidades principais
+
+- **Regras gerenciadas pela AWS**: Conjuntos prontos para bloquear ataques conhecidos.
+- **Regras personalizadas**: Você pode criar filtros específicos com base em IP, geolocalização, strings, padrões de tráfego etc.
+- **Web ACLs (Listas de Controle de Acesso)**: Conjunto de regras aplicadas a recursos como CloudFront, ALB, API Gateway e AppSync.
+- **Monitoramento e métricas**: Integração com CloudWatch para alertas e logs detalhados.
+- **Proteção contra bots**: Detecta e limita tráfego automatizado malicioso.
+
+### ✅ Boas práticas
+
+- **Implemente regras gerenciadas primeiro** para proteção rápida e eficaz.
+- **Use Web ACLs separadas** para ambientes distintos (produção, teste).
+- **Monitore logs com CloudWatch** para identificar padrões suspeitos.
+- **Combine com AWS Shield** para proteção avançada contra DDoS.
+- **Teste regras em modo de contagem (count mode)** antes de ativar bloqueios.
+
+### 🔗 Integrações recomendadas
+
+- **Amazon CloudFront**: Protege aplicações distribuídas globalmente.
+- **Application Load Balancer (ALB)**: Filtra tráfego antes de chegar às instâncias.
+- **API Gateway**: Protege APIs REST e GraphQL.
+
