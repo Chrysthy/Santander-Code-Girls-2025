@@ -1,0 +1,30 @@
+**A criptografia de dados na AWS protege informações sensíveis usando chaves gerenciadas e serviços integrados como o AWS KMS. Ela é aplicada tanto em repouso quanto em trânsito.**
+
+Aqui está um resumo direto e essencial:
+
+### 🔐 Tipos de criptografia na AWS
+
+- **Criptografia em repouso**: Protege dados armazenados em serviços como S3, EBS, RDS e DynamoDB. Usa chaves gerenciadas pelo AWS Key Management Service (KMS).
+- **Criptografia em trânsito**: Protege dados enquanto são transferidos entre serviços ou usuários, geralmente via TLS/SSL.
+
+### 🛠️ AWS Key Management Service (KMS)
+
+- **Serviço central para gerenciamento de chaves**.
+- Permite criar, rotacionar e controlar o uso de chaves criptográficas.
+- Suporta chaves gerenciadas pela AWS ou pelo cliente.
+- Pode ser integrado com serviços como S3, EBS, Lambda, Redshift, entre outros.
+
+### 📦 Aplicações práticas
+
+- **Buckets S3**: Criptografia automática com SSE-KMS.
+- **Bancos de dados**: RDS e DynamoDB oferecem criptografia nativa com KMS.
+- **Máquinas virtuais**: Volumes EBS podem ser criptografados com KMS.
+- **Logs e backups**: CloudTrail, Config e Backup usam criptografia para proteger registros e cópias.
+
+### ✅ Boas práticas
+
+- Classifique os dados por sensibilidade e use chaves diferentes para cada nível.
+- Habilite a rotação automática de chaves.
+- Restrinja o acesso às chaves com políticas do IAM.
+- Audite o uso de chaves com CloudTrail.
+
