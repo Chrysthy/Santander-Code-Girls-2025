@@ -1,0 +1,72 @@
+## 🚀 DevOps na AWS
+
+- **DevOps na AWS** combina práticas de automação, integração contínua (CI) e entrega contínua (CD) com serviços gerenciados da nuvem.
+- **Objetivo**: acelerar o desenvolvimento, aumentar a confiabilidade e escalar aplicações com segurança.
+- **Serviços principais**:
+  - AWS CodeCommit (controle de versão)
+  - AWS CodeBuild (compilação e testes)
+  - AWS CodeDeploy (implantação automatizada)
+  - AWS CodePipeline (orquestração de CI/CD)
+- **Benefícios**:
+  - Infraestrutura escalável
+  - Segurança integrada com IAM
+  - Monitoramento com CloudWatch
+  - Integração com GitHub, GitLab e outras ferramentas
+
+---
+
+## 📁 Criando seu repositório (AWS CodeCommit)
+
+- **AWS CodeCommit** é um serviço de repositório Git privado e gerenciado.
+- **Passos para criar**:
+  1. Acesse o console do AWS CodeCommit
+  2. Clique em “Criar repositório”
+  3. Dê um nome e descrição
+  4. Configure permissões com IAM
+- **Vantagens**:
+  - Alta disponibilidade
+  - Integração com IAM para controle de acesso
+  - Compatível com comandos Git padrão
+
+---
+
+## 🧩 Git push e primeiro commit
+
+- **Fluxo básico**:
+  1. Clone o repositório:
+     ```bash
+     git clone https://git-codecommit.REGION.amazonaws.com/v1/repos/NOME_REPOSITORIO
+     ```
+  2. Adicione arquivos e faça commit:
+     ```bash
+     git add .
+     git commit -m "Primeiro commit"
+     ```
+  3. Envie para o CodeCommit:
+     ```bash
+     git push origin main
+     ```
+- **Dicas**:
+  - Configure credenciais com AWS CLI
+  - Use HTTPS ou SSH para autenticação
+  - IAM pode ser usado para controle de acesso granular
+
+---
+
+## 🛠️ AWS CodeBuild
+
+- **AWS CodeBuild** é um serviço de compilação totalmente gerenciado.
+- **Funções principais**:
+  - Compila código-fonte
+  - Executa testes automatizados
+  - Gera artefatos prontos para implantação
+- **Configuração**:
+  - Use o arquivo `buildspec.yml` para definir comandos de build
+  - Integre com CodePipeline para CI/CD completo
+  - Suporte a ambientes personalizados e linguagens como Java, Python, Node.js
+- **Vantagens**:
+  - Escalabilidade automática
+  - Sem necessidade de gerenciar servidores de build
+  - Integração com GitHub, GitLab, Bitbucket e CodeCommit
+
+---
