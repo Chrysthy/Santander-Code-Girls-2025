@@ -1,0 +1,46 @@
+## 🚀 O que é DevOps
+
+- **DevOps** é uma abordagem cultural, organizacional e técnica que une as equipes de desenvolvimento (Dev) e operações (Ops) para acelerar a entrega de software com maior qualidade.
+- Envolve automação, integração contínua (CI), entrega contínua (CD), monitoramento e colaboração constante.
+- Objetivo: reduzir o tempo entre escrever código e colocá-lo em produção, mantendo confiabilidade e segurança.
+
+---
+
+## 🕰️ Como surgiu o DevOps
+
+- O termo surgiu por volta de **2008**, quando **Patrick Debois** começou a discutir formas de integrar desenvolvimento e operações de TI.
+- O movimento nasceu como resposta às falhas do modelo tradicional, onde Dev e Ops trabalhavam isoladamente, gerando conflitos e atrasos.
+- A inspiração veio da **metodologia ágil**, que já promovia ciclos curtos e colaboração, mas não resolvia os gargalos de infraestrutura.
+
+---
+
+## 🧭 Princípios chave do DevOps
+
+1. **Colaboração**: Dev e Ops trabalham juntos desde o início do projeto.
+2. **Automação**: Reduz tarefas manuais com ferramentas de CI/CD, testes automatizados e monitoramento.
+3. **Integração Contínua (CI)**: Código é integrado e testado frequentemente.
+4. **Entrega Contínua (CD)**: Código validado é automaticamente preparado para produção.
+5. **Monitoramento e Feedback**: Métricas e logs são usados para melhorar continuamente o sistema.
+6. **Cultura de responsabilidade compartilhada**: Todos são responsáveis pelo sucesso do produto.
+
+---
+
+## 🧑‍💻 Como trabalhar com DevOps
+
+- **Ferramentas comuns**:
+  - CI/CD: Jenkins, GitLab CI, GitHub Actions
+  - Infraestrutura como Código: Terraform, AWS CloudFormation
+  - Containers: Docker, Kubernetes
+  - Monitoramento: Prometheus, Grafana, ELK Stack
+- **Práticas recomendadas**:
+  - Automatizar testes e deploys
+  - Usar pipelines para validar e entregar código
+  - Criar ambientes replicáveis com IaC
+  - Promover cultura de aprendizado e melhoria contínua
+- **Perfis profissionais**:
+  - DevOps Engineer
+  - Site Reliability Engineer (SRE)
+  - Cloud Engineer
+
+---
+
