@@ -1,0 +1,6 @@
+Fluxo do processo:
+
+1. Upload de arquivo no S3
+2. Evento dispara a função Lambda
+3. Lambda executa a lógica configurada (ex.: registrar metadados, renomear arquivo, registrar logs, etc.)
+4. Dados podem ser enviados para logs no CloudWatch
