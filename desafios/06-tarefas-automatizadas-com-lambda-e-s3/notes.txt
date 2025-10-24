@@ -1,0 +1,6 @@
+💡 Insights:
+
+- Como eventos S3 disparam funções Lambda automaticamente
+- Diferença entre execução síncrona e assíncrona
+- Importância das permissões corretas (IAM Role)
+- Como monitorar logs via CloudWatch
