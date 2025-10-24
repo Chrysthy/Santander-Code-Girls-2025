@@ -1,0 +1,85 @@
+## ☁️ Migração de Empresas para Cloud
+
+- **Objetivo**: Modernizar operações, reduzir custos e escalar com flexibilidade.
+- **Modelos de migração**:
+  - Lift-and-shift: mover aplicações sem alterações
+  - Refatoração: adaptar aplicações para aproveitar recursos da nuvem
+  - Replataforma: migrar com pequenas otimizações
+- **Ferramentas AWS**:
+  - AWS Migration Hub: centraliza progresso de migração
+  - AWS Application Discovery Service: identifica dependências
+  - AWS Database Migration Service (DMS): migra bancos de dados com mínima interrupção
+- **Etapas recomendadas**:
+  1. Avaliação e planejamento
+  2. Prova de conceito
+  3. Migração por ondas
+  4. Otimização pós-migração
+
+---
+
+## 🧰 DevOps com Ansible
+
+- **Ansible**: Ferramenta de automação sem agente, ideal para configuração e orquestração.
+- **Integração com AWS**:
+  - Usa inventário dinâmico via plugin `aws_ec2`
+  - Pode ser integrado ao AWS Systems Manager para maior segurança e controle
+- **Aplicações**:
+  - Provisionamento de EC2
+  - Configuração de ambientes
+  - Automação de tarefas operacionais
+- **Vantagens**:
+  - Simplicidade com YAML
+  - Boa para ambientes híbridos e multi-cloud
+
+---
+
+## 🧱 DevOps com Terraform
+
+- **Terraform**: Ferramenta de IaC que permite definir e provisionar infraestrutura com código.
+- **Integração com AWS**:
+  - Usa o provedor `aws` para criar recursos como EC2, S3, VPC etc.
+  - Suporte a módulos reutilizáveis e controle de estado
+- **Fluxo típico**:
+  1. `terraform init`
+  2. `terraform plan`
+  3. `terraform apply`
+  4. `terraform destroy`
+- **Vantagens**:
+  - Multi-cloud
+  - Controle de versão da infraestrutura
+  - Ideal para ambientes complexos e escaláveis
+
+---
+
+## 📦 DevOps com AWS CloudFormation
+
+- **CloudFormation**: Serviço nativo da AWS para IaC usando JSON ou YAML.
+- **Funcionalidades**:
+  - Criação de pilhas (stacks) com recursos interdependentes
+  - Atualização e rollback automático
+  - Integração com CodePipeline e CloudWatch
+- **Vantagens**:
+  - Totalmente gerenciado pela AWS
+  - Suporte a macros e transformações
+  - Ideal para ambientes exclusivamente AWS
+
+---
+
+## 🧑‍💻 Trabalhando com DevOps
+
+- **Práticas essenciais**:
+  - CI/CD com CodePipeline, CodeBuild e CodeDeploy
+  - Monitoramento com CloudWatch e X-Ray
+  - IaC com Terraform ou CloudFormation
+  - Automação com Ansible ou AWS Systems Manager
+- **Cultura DevOps**:
+  - Colaboração entre Dev e Ops
+  - Feedback contínuo
+  - Responsabilidade compartilhada
+- **Ferramentas recomendadas**:
+  - Git + CodeCommit
+  - Jenkins, GitHub Actions
+  - Docker + ECS/EKS
+  - IAM para controle de acesso
+
+---
