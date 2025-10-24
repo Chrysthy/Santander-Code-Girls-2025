@@ -3,7 +3,6 @@
 
 1. Criar arquivo `template.yaml` com o seguinte conteúdo:
 
-```yaml
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Criação de um bucket S3 com CloudFormation - Chrystine DIO Lab"
 
@@ -24,4 +23,3 @@ Criar a stack e aguardar status CREATE_COMPLETE
 
 Verificar no serviço S3 que o bucket foi criado corretamente
 
-💡 Dica: nomes de buckets devem ser únicos globalmente. Se receber erro de conflito, altere o nome no template.
