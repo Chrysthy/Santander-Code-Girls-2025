@@ -1,0 +1,98 @@
+## 🧱 1. O que é Terraform
+
+- **Terraform** é uma ferramenta de *Infraestrutura como Código (IaC)* desenvolvida pela HashiCorp.
+- Permite definir, provisionar e gerenciar infraestrutura em nuvem (como AWS, Azure, GCP) usando arquivos de configuração declarativos (`.tf`).
+- **Vantagens**:
+  - Controle de versão da infraestrutura
+  - Reutilização de código com módulos
+  - Planejamento de mudanças com `terraform plan`
+  - Execução segura com `terraform apply`
+
+---
+
+## 🧩 2. Entendendo a estrutura do Terraform
+
+- **Arquivos principais**:
+  - `main.tf`: define os recursos
+  - `variables.tf`: declara variáveis reutilizáveis
+  - `outputs.tf`: define saídas úteis após o provisionamento
+  - `terraform.tfstate`: armazena o estado atual da infraestrutura
+- **Boas práticas**:
+  - Modularização do código
+  - Separação por ambientes (dev, staging, prod)
+  - Uso de workspaces para múltiplos ambientes
+
+---
+
+## 🧪 3. AWS local com LocalStack
+
+- **LocalStack** é uma ferramenta que simula serviços da AWS localmente.
+- Ideal para testes e desenvolvimento sem custos de nuvem.
+- Suporta serviços como S3, Lambda, DynamoDB, API Gateway, entre outros.
+- Executado via Docker, com integração fácil com Terraform, AWS CLI e SDKs
+
+---
+
+## 🛠️ 4. Criando nosso ambiente LocalStack e IaC
+
+- **Passos típicos**:
+  1. Instalar Docker e LocalStack
+  2. Configurar `main.tf` com o provedor AWS apontando para o endpoint do LocalStack
+  3. Executar `terraform init`, `plan` e `apply`
+- **Benefícios**:
+  - Testes rápidos e seguros
+  - Sem necessidade de conta AWS real
+  - Ideal para aprendizado e CI/CD local
+
+---
+
+## 🧰 5. NoSQL Workbench e Postman
+
+- **NoSQL Workbench**:
+  - Ferramenta gráfica para modelar, consultar e visualizar dados no DynamoDB
+  - Permite simular queries e criar modelos de dados complexos
+  - Suporta integração com DynamoDB local
+- **Postman**:
+  - Usado para testar APIs RESTful, como as expostas por API Gateway
+  - Permite enviar requisições HTTP para endpoints locais (ex: LocalStack) ou reais
+  - Útil para validar integrações entre serviços (ex: API Gateway + Lambda)
+
+---
+
+## 🔁 6. Destruir e recriar com IaC
+
+- **Terraform** permite destruir e recriar infraestrutura com comandos:
+  - `terraform destroy`: remove todos os recursos definidos
+  - `terraform apply`: recria os recursos conforme o código
+- **Boas práticas**:
+  - Usar `terraform plan` antes de aplicar mudanças
+  - Controlar o estado com `terraform state` para evitar perda de dados
+  - Automatizar com pipelines CI/CD
+
+---
+
+## 🏗️ 7. Criando
+
+- **Criação de recursos** com Terraform envolve:
+  - Definir o provedor (`provider "aws"`)
+  - Declarar recursos (`resource "aws_s3_bucket"`, `aws_instance`, etc.)
+  - Executar `terraform init`, `plan`, `apply`
+- **Exemplo**:
+  ```hcl
+  resource "aws_s3_bucket" "meu_bucket" {
+    bucket = "meu-bucket-exemplo"
+    acl    = "private"
+  }
+  ```
+
+
+---
+
+## 🧹 8. Apagando
+
+- **Remoção de recursos**:
+  - `terraform destroy`: remove todos os recursos do projeto
+  - Para deletar apenas um recurso: remova do código e execute `terraform apply`
+- **Dica**: sempre verifique o plano (`terraform plan`) antes de aplicar destruições para evitar perda acidental
+
+---
