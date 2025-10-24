@@ -1,0 +1,97 @@
+Cada seção traz os principais conceitos, ferramentas e práticas recomendadas:
+
+---
+
+## 🧠 1. Introdução à Automatização de Tarefas na AWS
+
+- **Objetivo**: Reduzir tarefas manuais e aumentar a eficiência operacional.
+- **Automação DevOps**: Envolve instalação, configuração, implantação e suporte de infraestrutura e aplicativos.
+- **Benefícios**:
+  - Padronização de ambientes
+  - Repetibilidade de processos
+  - Redução de erros humanos
+  - Agilidade na entrega de serviços
+
+---
+
+## ⚙️ 2. Automatizar Tarefas
+
+- **Exemplos práticos**:
+  - Criar instâncias EC2 com AWS CLI
+  - Automatizar provisionamento com AWS Control Tower
+  - Usar AWS Lambda para executar funções em resposta a eventos
+- **Ferramentas comuns**:
+  - AWS CLI
+  - AWS SDKs
+  - APIs da AWS
+  - AWS Service Catalog
+
+---
+
+## 🛠️ 3. Ferramentas para Automatizar Tarefas
+
+| Ferramenta            | Função Principal                                      |
+|-----------------------|-------------------------------------------------------|
+| AWS CloudFormation    | Provisionamento de infraestrutura como código         |
+| AWS CLI               | Execução de comandos para gerenciar recursos          |
+| AWS Lambda            | Execução de funções serverless em resposta a eventos  |
+| AWS Systems Manager   | Gerenciamento e automação de tarefas operacionais     |
+| AWS OpsWorks          | Gerenciamento de configuração com Chef/Puppet         |
+| AWS CodePipeline      | Automação de pipelines de CI/CD                       |
+
+Sources: 
+
+---
+
+## 🚀 4. Formas e Benefícios da Automatização
+
+- **Formas**:
+  - Scripts com AWS CLI
+  - Infraestrutura como Código (IaC) com Terraform ou CloudFormation
+  - Funções serverless com Lambda
+  - Integração com ferramentas externas como Ansible e PowerShell
+- **Benefícios**:
+  - Escalabilidade e consistência
+  - Redução de custos operacionais
+  - Entregas mais rápidas e seguras
+  - Menor dependência de processos manuais
+
+---
+
+## 📦 5. Automatizando usando Ansible
+
+- **Ansible**: Ferramenta sem agente para automação de configuração.
+- **Integração com AWS**:
+  - Usa inventário dinâmico via plugin `aws_ec2`
+  - Interage com AWS via API usando bibliotecas Python
+- **Aplicações**:
+  - Configuração de instâncias EC2
+  - Gerenciamento de infraestrutura leve
+  - Ideal para tarefas pontuais e ambientes menores
+
+---
+
+## 🧱 6. Automatizando usando o Terraform
+
+- **Terraform**: Ferramenta de IaC para provisionamento completo de infraestrutura.
+- **Características**:
+  - Define recursos em arquivos `.tf`
+  - Executa `terraform plan` e `terraform apply` para criar ambientes
+  - Suporte a múltiplos provedores (AWS, GCP, Azure)
+- **Exemplos**:
+  - Criar buckets S3
+  - Provisionar EC2 com GitHub Actions
+  - Automatizar ambientes multi-cloud
+
+---
+
+## 🖥️ 7. Usando PowerShell para codificação e concatenação de arquivos
+
+- **AWS Tools for PowerShell**:
+  - Conjunto de cmdlets para interagir com serviços AWS
+  - Permite criar, gerenciar e automatizar recursos via scripts
+- **Codificação de arquivos**:
+  - PowerShell permite manipular arquivos com diferentes formatos de codificação (UTF-8, ASCII etc.)
+  - Ideal para concatenação de logs, geração de relatórios e integração com pipelines
+
+---
